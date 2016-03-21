@@ -2,35 +2,23 @@
 Meteor.startup(function () {
   if (Lists.find().count() === 0) {
     var data = [
-      {name: "Meteor Principles",
-       items: ["Data on the Wire",
-         "One Language",
-         "Database Everywhere",
-         "Latency Compensation",
-         "Full Stack Reactivity",
-         "Embrace the Ecosystem",
-         "Simplicity Equals Productivity"
+      {name: "软件工程",
+       items: ["这是一个课件",
+         "这是第二个课件",
+         "这又是一个课件",
+         "这还是一个课件",
+         "这里有很多课件",
+         "这是个通知",
+         "这是个 Deadline"
        ]
       },
-      {name: "Languages",
-       items: ["Lisp",
-         "C",
-         "C++",
-         "Python",
-         "Ruby",
-         "JavaScript",
-         "Scala",
-         "Erlang",
-         "6502 Assembly"
+      {name: "软件工程实习",
+       items: ["假设我又列出来了很多课件"
          ]
       },
-      {name: "Favorite Scientists",
-       items: ["Ada Lovelace",
-         "Grace Hopper",
-         "Marie Curie",
-         "Carl Friedrich Gauss",
-         "Nikola Tesla",
-         "Claude Shannon"
+      {name: "数学建模",
+       items: ["课件",
+         "作业"
        ]
       }
     ];
