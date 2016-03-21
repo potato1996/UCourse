@@ -7,6 +7,9 @@
   height: 3rem;
   width: 100%;
 
+// added by zhaozewei
+  padding-left: 1.2em;
+
   .checkbox {
     .flex(0, 0, 44px);
     cursor: pointer;
@@ -47,7 +50,23 @@
     .delete-item { display: inline-block; }
   }
 
-  // Editing
+/*  // Editing
   .delete-item { display: none; }
-  &.editing .delete-item { display: inline-block; }
+  &.editing .delete-item { display: inline-block; } */
+
+// added by zhaozewei
+  .delete-item { display: inline-block; }
+
+
+// added by zhaozewei
+  .blue-point {
+      .transition( all 200ms ease-in );
+      background: @color-primary;
+      border-radius: .5em;
+      height: 1em;
+      width: 1em;
+      float: left;
+      margin-top: 1rem;
+      margin-right: 1em;
+    }
 }

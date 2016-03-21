@@ -151,7 +151,7 @@ Template.listsShow.events({
   'click .js-delete-list': function(event, template) {
     deleteList(this, template);
   },
-
+//TODO
   'click .js-todo-add': function(event, template) {
     template.$('.js-todo-new input').focus();
   },
