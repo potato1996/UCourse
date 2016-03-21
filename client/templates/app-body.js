@@ -111,6 +111,9 @@ Template.appBody.events({
     Session.set(MENU_KEY, false);
   },
 
+  'click .js-setting': function() {
+  },
+
   'click .js-logout': function() {
     Meteor.logout();
 
