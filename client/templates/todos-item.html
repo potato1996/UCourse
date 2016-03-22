@@ -19,7 +19,13 @@ class="list-todo {{activeListClass}}"
 <template name="todosItem">
   <div class="list-item">
     <span class="blue-point"></span>
-    <input type="text" value="{{text}}" placeholder="Task name">
+    <!-- <input type="text" value="{{text}}" placeholder="Task name"> -->
+
+    <!-- added by Sam -->
+    <a href="http://www.baidu.com" target="_blank"><input type="text" value="{{text}}" placeholder="Task name" readonly="true"></a>
+    <input type="text" value="" readonly="true">
+    <!-- end added -->
+
     <!--<a href="{{pathFor 'listsShow'}}" title="{{text}}">{{text}}</a>-->
     <a class="js-delete-item delete-item" href="#"><span class="icon-trash"></span></a>
   </div>
