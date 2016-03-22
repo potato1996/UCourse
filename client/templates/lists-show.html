@@ -31,7 +31,10 @@
           <div class="options-web">
 
 <!-- TODO -->
-            <a class="js-toggle-list-privacy nav-item">
+<!-- changed by xujiahao, when click this icom, crouse info will be show -->
+<!-- Action code has been added in lists-show.js -->
+            <!-- <a class="js-toggle-list-privacy nav-item"> -->
+            <a class="js-show-info nav-item">
 <!--
               {{#if userId}}
                 <span class="icon-lock" title="Make list public"></span>
@@ -68,6 +71,17 @@
 <!-- end added -->
 
     <div class="content-scrollable list-items">
+
+      {{#if showInfo}}
+      <!-- 这里只是一个实验性页面，还有许多许多问题没有得到解决。
+      整个页面信息保存在哪里？调用 CSS 优化等等都是问题。-->
+      <h3> 软件工程简介 </h3>
+      <p> 软件工程实验班是一门神课！</p>
+      <p> 你将会学到创业的真谛... </p>
+      <p> 黄老师超级 Nice!!! </p>
+      <p> 我会想办法把这些东西弄得好看一点…… </p>
+      {{/if}}
+
       {{#if todosReady}}
         {{#with _id}} {{! Establish new data context with only the '_id'
                           field. This way, when the 'incompleteCount' field

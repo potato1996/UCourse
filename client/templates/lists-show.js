@@ -1,6 +1,10 @@
 var EDITING_KEY = 'editingList';
 Session.setDefault(EDITING_KEY, false);
 
+// 用于标记是否是课程信息显示状态的变量
+var INFO = "showInfo"
+Session.setDefault(INFO, false);
+
 // Track if this is the first time the list template is rendered
 var firstRender = true;
 var listRenderHold = LaunchScreen.hold();
@@ -43,6 +47,10 @@ Template.listsShow.helpers({
 
   todos: function(listId) {
     return Todos.find({listId: listId}, {sort: {createdAt : -1}});
+  },
+  // 协助获取当前是否正在显示课程信息的 Helper
+  showInfo: function(){
+    return Session.get(INFO);
   }
 });
 
@@ -151,9 +159,21 @@ Template.listsShow.events({
   'click .js-delete-list': function(event, template) {
     deleteList(this, template);
   },
-//TODO
+
   'click .js-todo-add': function(event, template) {
     template.$('.js-todo-new input').focus();
+  },
+
+  // 注册显示列表功能
+  'click .js-show-info': function(event, template) {
+    // if(!Session.get(INFO)){
+    //   // 非信息显示状态下点击按钮，显示课程信息
+    //
+    // }
+    // else{
+    //
+    // }
+    Session.set(INFO, !Session.get(INFO));
   },
 
   'submit .js-todo-new': function(event) {
