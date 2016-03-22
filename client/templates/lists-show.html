@@ -29,27 +29,43 @@
             <span class="icon-cog"></span>
           </div>
           <div class="options-web">
+
+<!-- TODO -->
             <a class="js-toggle-list-privacy nav-item">
+<!--
               {{#if userId}}
                 <span class="icon-lock" title="Make list public"></span>
               {{else}}
                 <span class="icon-unlock" title="Make list private"></span>
               {{/if}}
+-->
+<!-- added by zhaozewei -->
+              <span class="icon-info" title="Course information"></span>
+<!-- end added -->
             </a>
 
             <a class="js-delete-list nav-item">
-              <span class="icon-trash" title="Delete list"></span>
+              <span class="icon-trash" title="Delete course"></span>
             </a>
           </div>
         </div>
       {{/if}}
 
+<!--
       <form class="js-todo-new todo-new input-symbol">
         <input type="text" placeholder="Type to add new tasks">
         <span class="icon-add js-todo-add"></span>
       </form>
     </nav>
-
+-->
+<!-- TODO -->
+<!-- added by zhaozewei -->
+      <form class="js-todo-new todo-new input-symbol">
+        <input type="text" placeholder="Search">
+        <span class="icon-search-1 js-todo-add"></span>
+      </form>
+    </nav>
+<!-- end added -->
 
     <div class="content-scrollable list-items">
       {{#if todosReady}}
@@ -60,14 +76,16 @@
             {{> todosItem}}
           {{else}}
             <div class="wrapper-message">
-              <div class="title-message">No tasks here</div>
-              <div class="subtitle-message">Add new tasks using the field above</div>
+<!-- edited by zhaozewei -->
+              <div class="title-message">No files here</div>
+              <div class="subtitle-message">Why not have a rest and check later?</div>
+<!-- end edited -->
             </div>
           {{/each}}
         {{/with}}
       {{else}}
           <div class="wrapper-message">
-            <div class="title-message">Loading tasks...</div>
+            <div class="title-message">Loading...</div>
           </div>
       {{/if}}
     </div>

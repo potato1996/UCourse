@@ -3,7 +3,6 @@
 
     <section id="menu">
       {{#if currentUser}}
-
         <div class="btns-group-vertical">
           <a href="#" class="js-user-menu btn-secondary">
             {{#if userMenuOpen}}
@@ -14,12 +13,19 @@
             {{emailLocalPart}}
           </a>
           {{#if userMenuOpen}}
-            <a class="js-setting btn-secondary">Setting</a>
             <a class="js-logout btn-secondary">Logout</a>
           {{/if}}
         </div>
+      {{else}}
+        <div class="btns-group">
+          <a href="{{pathFor 'signin'}}" class="btn-secondary">Sign In</a>
+          <a href="{{pathFor 'join'}}" class="btn-secondary">Join</a>
+        </div>
+      {{/if}}
 
-        <div class="list-todos">
+      <div class="list-todos">
+        <a class="js-new-list link-list-new"><span class="icon-plus"></span>New List</a>
+
         {{#each lists}}
           <a href="{{pathFor 'listsShow'}}" class="list-todo {{activeListClass}}" title="{{name}}">
             {{#if userId}}
@@ -31,10 +37,8 @@
             {{name}}
           </a>
         {{/each}}
-        <a class="js-new-list link-list-new"><span class="icon-plus"></span>New Course</a>
-        </div>
-      {{/if}}
 
+      </div>
     </section>
 
     {{#unless connected}}
@@ -49,22 +53,12 @@
       </div>
     {{/unless}}
 
-    {{#if currentUser}}
-      <div class="content-overlay"></div>
+    <div class="content-overlay"></div>
 
-      <div id="content-container">
-        {{#each thisArray}}
-          {{> yield}}
-        {{/each}}
-      </div>
-    {{else}}
-      <div class="content-overlay"></div>
-
-      <div id="content-container" style="position:absolute;left:0px">
-        {{#each thisArray}}
-          {{> yield}}
-        {{/each}}
-      </div>
-    {{/if}}
+    <div id="content-container">
+      {{#each thisArray}}
+        {{> yield}}
+      {{/each}}
     </div>
+  </div>
 </template>
