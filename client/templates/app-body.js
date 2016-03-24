@@ -112,6 +112,7 @@ Template.appBody.events({
   },
 
   'click .js-setting': function() {
+    Router.go('userSetting');
   },
 
   'click .js-logout': function() {
