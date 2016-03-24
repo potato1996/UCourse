@@ -12,14 +12,15 @@ body {
 #container {
   .position(absolute, 0, 0, 0, 0);
 
+// deleted by zhaozewei, full screen
   @media screen and (min-width: 60em) {
-    left: @column;
-    right: @column;
+//    left: @column;
+//    right: @column;
   }
 
   @media screen and (min-width: 80em) {
-    left: 2*@column;
-    right: 2*@column;
+//    left: 2*@column;
+//    right: 2*@column;
   }
 
   // Hide anything offscreen
@@ -36,6 +37,9 @@ body {
   .transform(translate3d(0, 0, 0));
   background: @color-tertiary;
   opacity: 1;
+
+// added by zhaozewei, hide the scrollbar
+  margin-left: -12.8px;
 
   @media screen and (min-width: 40em) {
     left: @menu-width;
