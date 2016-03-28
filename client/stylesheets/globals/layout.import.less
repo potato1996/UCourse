@@ -52,6 +52,29 @@ body {
     -webkit-overflow-scrolling: touch;
   }
 
+  .content-scrollable-l {
+    //.position(absolute, 0, 0, 0, 0);
+    .transform(translate3d(0, 0, 0));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    float: left;
+    height: 100%;
+    width: 50%;
+    border-right-style: solid;
+    border-right-width: thin;
+    border-right-color: #dddddd;
+  }
+
+  .content-scrollable-r {
+    //.position(absolute, 0, 0, 0, 0);
+    .transform(translate3d(0, 0, 0));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    float: left;
+    height: 100%;
+    width: 50%;
+  }
+
   // Toggle menu on mobile
   .menu-open & {
     .transform(translate3d(@menu-width, 0, 0));
