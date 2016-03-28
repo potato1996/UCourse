@@ -12,9 +12,22 @@
     </nav>
 
     <div class="content-scrollable list-items">
-      <div class="list-item"><a target="_blank"><input type="text" value="用户设置" readonly="true"></a> </div>
-      <div class="list-item"><a target="_blank"><input type="text" value="课程设置" readonly="true"></a> </div>
-      <div class="list-item"><a target="_blank"><input type="text" value="程序设置" readonly="true"></a> </div>
+      <div class="list-item js-set-password">
+        <a target="_blank"><input type="text" value="更改密码" readonly="true">
+      </a> </div>
+
+      {{#if settingPassword}}
+      <div class="list-item-center"> 旧密码 <a target="_blank"> <input type="text" value="输入旧密码"> </a> </div>
+      <div class="list-item-center"> 新密码 <a> <input type="text" value="输入新密码"> </a> </div>
+      <div class="list-item-center"> 确认新密码 <a> <input type="text" value="输入确认新密码"> </a> </div>
+      {{/if}}
+
+      <div class="list-item">
+        <a target="_blank"><input type="text" value="课程设置" readonly="true">
+      </a> </div>
+      <div class="list-item">
+        <a target="_blank"><input type="text" value="程序设置" readonly="true">
+      </a> </div>
     </div>
 
   </div>
