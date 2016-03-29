@@ -62,7 +62,7 @@
       </form>
 <!-- end deleted -->
 
-<!-- 
+<!--
 // added by zhaozewei
       <form class="js-todo-new todo-new input-symbol">
         <input type="text" placeholder="Search">
@@ -81,11 +81,11 @@
       {{#if showInfo}}
       <!-- 这里只是一个实验性页面，还有许多许多问题没有得到解决。
       整个页面信息保存在哪里？调用 CSS 优化等等都是问题。-->
-      <h3> 软件工程简介 </h3>
-      <p> 软件工程实验班是一门神课！</p>
-      <p> 你将会学到创业的真谛... </p>
-      <p> 黄老师超级 Nice!!! </p>
-      <p> 我会想办法把这些东西弄得好看一点…… </p>
+      <h3 class="infoHead"> 软件工程简介 </h3>
+      <p class="infoParagraph"> 软件工程实验班是一门神课！</p>
+      <p class="infoParagraph"> 你将会学到创业的真谛... </p>
+      <p class="infoParagraph"> 黄老师超级 Nice!!! </p>
+      <p class="infoParagraph"> 我会想办法把这些东西弄得好看一点…… </p>
 <!-- edited by zhaozewei to split information and list-items -->
       {{else}}
 
@@ -97,7 +97,7 @@
                             field. This way, when the 'incompleteCount' field
                             changes, we don't re-render the list contents }}
               {{#each todos this}}
-<!-- edited by zhaozewei, use noticeItem instead 
+<!-- edited by zhaozewei, use noticeItem instead
                 {{> todosItem}}-->
                 {{> noticeItem}}
               {{else}}
