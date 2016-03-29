@@ -90,13 +90,16 @@
       {{else}}
 
 <!-- edited by zhaozewei to divide the content into two parts: notices and files -->
+<!-- notices part -->
         <div class="content-scrollable-l list-items">
           {{#if todosReady}}
             {{#with _id}} {{! Establish new data context with only the '_id'
                             field. This way, when the 'incompleteCount' field
                             changes, we don't re-render the list contents }}
               {{#each todos this}}
-                {{> todosItem}}
+<!-- edited by zhaozewei, use noticeItem instead 
+                {{> todosItem}}-->
+                {{> noticeItem}}
               {{else}}
                 <div class="wrapper-message">
   <!-- edited by zhaozewei -->
@@ -112,6 +115,7 @@
               </div>
           {{/if}}
         </div>
+<!-- files part -->
         <div class="content-scrollable-r list-items">
           {{#if todosReady}}
             {{#with _id}} {{! Establish new data context with only the '_id'
