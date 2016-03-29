@@ -1,7 +1,9 @@
 // created by zhaozewei
 
 Template.notice.helpers({
-
+  noticeTitle: function(){
+    return Session.get("noticeTitle");
+  },
 });
 
 Template.notice.events({
