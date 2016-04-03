@@ -2,5 +2,35 @@
   .content-scrollable {
     background: @color-empty;
     top: 5em !important;
+
+// added by zhaozewei
+    .content-scrollable-l, .content-scrollable-r {
+      //.position(absolute, 0, 0, 0, 0);
+      .transform(translate3d(0, 0, 0));
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      float: left;
+      height: 100%;
+      width: 100%;
+
+      @media screen and (min-width: 40em) {
+        width: 50%;
+      }
+    }
+
+    .content-scrollable-l {
+      @media screen and (min-width: 40em) {
+        border-right-style: solid;
+        border-right-width: thin;
+        border-right-color: #dddddd;
+      }
+    }
+
+// Display one part when the screen is small.
+    @media screen and (max-width: 40em) {
+      .content-scroolable-l { display: block; }
+      .content-scroolable-r { display: none; }
+    }
   }
 }
+// end added

@@ -142,7 +142,9 @@ Template.listsShow.events({
     } else if ($(event.target).val() === 'delete') {
       deleteList(this, template);
     } else {
-      toggleListPrivacy(this, template);
+// edited by zhaozewei, to change the function of the 'option', TODO
+      //toggleListPrivacy(this, template);
+      Session.set(INFO, !Session.get(INFO));
     }
 
     event.target.selectedIndex = 0;

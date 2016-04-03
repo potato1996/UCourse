@@ -1,0 +1,3 @@
+/*****  add schema  ****/
+meteor add aldeed:simple-schema
+meteor add aldeed:collection2
