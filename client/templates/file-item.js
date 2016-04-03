@@ -9,7 +9,7 @@ Template.fileItem.helpers({
 
 Template.fileItem.events({
   'click .js-show-file': function(text) {
-    //Router.go('file');
+    Router.go('file-page');
     Session.set("fileTitle", text);
   }
 });
