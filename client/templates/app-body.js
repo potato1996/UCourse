@@ -113,9 +113,7 @@ Template.appBody.events({
 
   'click .js-setting': function() {
     Router.go('userSetting');
-    Session.set("settingAccount", false);
-    Session.set("settingOthers", false);
-    Session.set("settingPassword", false);
+    Session.set("settingStatus", "home");
   },
 
   'click .js-logout': function() {
