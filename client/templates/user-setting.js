@@ -14,6 +14,9 @@ Session.setDefault("settingStatus", "home");
 // 帮助&反馈
 // 关于
 
+var changePassword = function(newPassword){}；
+var checkPassword = function(username,password){};
+
 Template.userSetting.helpers({
   settingItems: function(){
     switch (Session.get("settingStatus")) {
@@ -25,7 +28,7 @@ Template.userSetting.helpers({
       ];
       case "password":
       return [
-        {text: "更改密码"  , jsAct: "" },
+        {text: "更改密码"  , jsAct: "js-set-password" },
       ];
       case "common":
       return [
@@ -63,5 +66,8 @@ Template.userSetting.events({
     };
     var status = Session.get("settingStatus")
     Session.set("settingStatus",backPage[status]);
-  }
+  },
+  'click .js-set-password': function() {
+
+  },
 });

@@ -9,7 +9,6 @@ blaze-html-templates
 session
 mongo
 mobile-experience
-standard-minifiers
 insecure
 less
 iron:router@0.9.4
@@ -19,3 +18,5 @@ tracker
 check
 aldeed:simple-schema
 aldeed:collection2
+standard-minifier-css
+standard-minifier-js
