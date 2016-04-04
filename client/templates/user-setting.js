@@ -14,7 +14,7 @@ Session.setDefault("settingStatus", "home");
 // 帮助&反馈
 // 关于
 
-var changePassword = function(newPassword){}；
+var changePassword = function(newPassword){};
 var checkPassword = function(username,password){};
 
 Template.userSetting.helpers({

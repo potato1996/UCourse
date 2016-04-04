@@ -28,8 +28,13 @@
 
 // Display one part when the screen is small.
     @media screen and (max-width: 40em) {
-      .content-scroolable-l { display: block; }
-      .content-scroolable-r { display: none; }
+      .content-scrollable-l { display: block; }
+      .content-scrollable-r { display: none; }
+    }
+// Display both parts when the screen is large.
+    @media screen and (min-width: 40em) {
+      .content-scrollable-l { display: block !important; }
+      .content-scrollable-r { display: block !important; }
     }
   }
 }

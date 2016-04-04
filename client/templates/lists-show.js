@@ -2,7 +2,7 @@ var EDITING_KEY = 'editingList';
 Session.setDefault(EDITING_KEY, false);
 
 // 用于标记是否是课程信息显示状态的变量
-var INFO = "showInfo"
+var INFO = "showInfo";
 Session.setDefault(INFO, false);
 
 // Track if this is the first time the list template is rendered
@@ -177,6 +177,30 @@ Template.listsShow.events({
     // }
     Session.set(INFO, !Session.get(INFO));
   },
+
+// added by zhaozewei, to implement the switch(notice/file) function
+  'click .js-switch-notice': function(event, template) {
+    //alert("switch to notice");
+    $("#col-notice").css("display", "block");       // show notice column
+    $("#col-file").css("display", "none");          // hide file column
+
+    $("#btn-notice").attr("disabled", "disabled");  // disable the pressed button
+    $("#btn-notice").css({"background-color": "#598ea9", "cursor": "unset"});
+    $("#btn-file").attr("disabled", false);         // enable the other button
+    $("#btn-file").css({"background-color": "#79aec9", "cursor": "pointer"});
+  },
+
+  'click .js-switch-file': function(event, template) {
+    //alert("switch to file");
+    $("#col-file").css("display", "block");
+    $("#col-notice").css("display", "none");
+
+    $("#btn-file").attr("disabled", "disabled");
+    $("#btn-file").css({"background-color": "#598ea9", "cursor": "unset"});
+    $("#btn-notice").attr("disabled", false);
+    $("#btn-notice").css({"background-color": "#79aec9", "cursor": "pointer"});
+  },
+// end added
 
   'submit .js-todo-new': function(event) {
     event.preventDefault();

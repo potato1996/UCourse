@@ -54,7 +54,7 @@
 
 
 // added by zhaozewei
-.am-btn-switch {
+.am-btn {
 	display:inline-block;
 	margin-bottom:0;
 	padding:0;
@@ -64,6 +64,7 @@
 	font-weight:400;
 	line-height:1.2;
 	text-align:center;
+    text-decoration: none !important; //prevents global <a> styles from applying
 	white-space:nowrap;
 	background-image:none;
 	border:1px solid transparent;
@@ -92,8 +93,10 @@
 	background-color:#79aec9;
 	border-color:#70a5c0;
 }
-.am-btn-primary:visited {
-	color:#fff
+.am-btn-disabled {
+	color:#fff;
+	background-color:#598ea9;
+	border-color:#70a5c0;
 }
 .am-btn-group {
 	position:relative;
