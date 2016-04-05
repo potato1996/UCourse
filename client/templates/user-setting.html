@@ -1,6 +1,5 @@
 <template name="settingItem">
   <div class="setting-item {{jsAct}}">
-    <span class="blue-point"></span>
     <a><p class="item-word">{{text}}</p></a>
   </div>
 </template>
@@ -13,12 +12,13 @@
         </div>
 
         <h1 class="title-page"><span class="title-wrapper">Setting</span></h1>
+        <div class="nav-group right">
+          <a class="js-page-back nav-item">
+            <span class="icon-circle-left" title="Go Back"></span>
+          </a>
+        </div>
     </nav>
     <div class="content-scrollable list-items">
-
-      <div class="setting-item js-page-back">
-        <a><p class="item-word">后退</p></a>
-      </div>
 
       {{#each settingItems}}
         {{> settingItem}}
