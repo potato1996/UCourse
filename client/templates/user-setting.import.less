@@ -12,6 +12,15 @@
     float: right;
     padding-right: 1.2em;
   }
+
+  &:hover {
+    // set background color when cursor hover
+    background-color: rgba(0,0,255,.1);
+  }
+  &:active {
+    background-color: rgba(0,0,255,.3);
+  }
+
   // Style of list-item word
   .item-word {
     // .flex(1);
@@ -30,7 +39,10 @@
     background: transparent;
     cursor: pointer;
 
-    &:focus { cursor: text; }
+    // &:hover {
+    //   // Prevent hover states from being noticeable on Cordova apps
+    //   color: rgba(0,0,50,.6);
+    // }
   }
   // Border between list items
   & + .setting-item { border-top: 1px solid #f0f9fb; }
