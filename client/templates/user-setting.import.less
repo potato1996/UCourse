@@ -8,21 +8,12 @@
   width: 100%;
   padding-left: 1.2em;
 
-  .blue-point {
-      .transition( all 200ms ease-in );
-      background: @color-primary;
-      border-radius: .3em;
-      height: .6em;
-      width: .6em;
-      float: left;
-      margin-top: 1.25rem;
-      margin-right: 1em;
+  .right{
+    float: right;
   }
-
   // Style of list-item word
   .item-word {
     .flex(1);
-
     font-size: 14px;
     line-height: 20px;
     font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -41,5 +32,5 @@
     &:focus { cursor: text; }
   }
   // Border between list items
-  & + .list-item { border-top: 1px solid #f0f9fb; }
+  & + .setting-item { border-top: 1px solid #f0f9fb; }
 }
