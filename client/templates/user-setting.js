@@ -22,9 +22,9 @@ Template.userSetting.helpers({
     switch (Session.get("settingStatus")) {
       case "account":
       return [
-        {text: "邮箱"     , jsAct: "" },
-        {text: "学号"     , jsAct: "" },
-        {text: "密码"     , jsAct: "js-page-password" },
+        {text: "邮箱", jsAct: "" },
+        {text: "学号", jsAct: "" },
+        {text: "密码", jsAct: "js-page-password", icon:"icon-arrow-right" },
       ];
       case "password":
       return [
@@ -36,10 +36,10 @@ Template.userSetting.helpers({
       ];
       default:
       return [
-        {text: "账号"     , jsAct: "js-page-account" },
+        {text: "账号"     , jsAct: "js-page-account" ,  icon:"icon-arrow-right"},
         {text: "通知"     , jsAct: "" },
         {text: "隐私"     , jsAct: "" },
-        {text: "通用"     , jsAct: "js-page-common" },
+        {text: "通用"     , jsAct: "js-page-common",    icon:"icon-arrow-right"},
         {text: "帮助与反馈", jsAct: "" },
         {text: "关于"     , jsAct: "" },
       ];

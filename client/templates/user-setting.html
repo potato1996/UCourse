@@ -1,16 +1,18 @@
 <template name="settingItem">
   <div class="setting-item {{jsAct}}">
-    <a><p class="right item-word">{{text}}</p></a>
+    <a><p class="item-word">
+        {{text}}
+        <span class="right {{icon}}"></span>
+    </p></a>
   </div>
 </template>
 
 <template name="userSetting">
   <div class="page lists-show">
-    <nav class="js-title-nav">
-        <div class="nav-group">
+    <nav>
+        <!-- <div class="nav-group">
           <a href="#" class="js-menu nav-item"><span class="icon-list-unordered" title="Show menu"></span></a>
-        </div>
-
+        </div> -->
         <h1 class="title-page"><span class="title-wrapper">Setting</span></h1>
         <div class="nav-group right">
           <a class="js-page-back nav-item">
