@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?lia2js');
-    src:    url('fonts/icomoon.eot?lia2js#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?lia2js') format('truetype'),
-        url('fonts/icomoon.woff?lia2js') format('woff'),
-        url('fonts/icomoon.svg?lia2js#icomoon') format('svg');
+    src:    url('../icon/icomoon.eot?lia2js');
+    src:    url('../icon/icomoon.eot?lia2js#iefix') format('embedded-opentype'),
+        url('../icon/icomoon.ttf?lia2js') format('truetype'),
+        url('../icon/icomoon.woff?lia2js') format('woff'),
+        url('../icon/icomoon.svg?lia2js#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -258,4 +258,3 @@
 .icon-file-text-o:before {
     content: "\e93b";
 }
-
