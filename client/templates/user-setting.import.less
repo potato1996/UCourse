@@ -2,27 +2,28 @@
   .font-s2;
 
   // Layout of list-item children
-  .display(flex);
-  .flex-wrap(wrap);
+  // .display(flex);
+  // .flex-wrap(wrap);
   height: 3rem;
   width: 100%;
   padding-left: 1.2em;
 
-  .blue-point {
-      .transition( all 200ms ease-in );
-      background: @color-primary;
-      border-radius: .3em;
-      height: .6em;
-      width: .6em;
-      float: left;
-      margin-top: 1.25rem;
-      margin-right: 1em;
+  .right {
+    float: right;
+    padding-right: 1.2em;
+  }
+
+  &:hover {
+    // set background color when cursor hover
+    background-color: rgba(0,0,255,.1);
+  }
+  &:active {
+    background-color: rgba(0,0,255,.3);
   }
 
   // Style of list-item word
   .item-word {
-    .flex(1);
-
+    // .flex(1);
     font-size: 14px;
     line-height: 20px;
     font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -38,8 +39,11 @@
     background: transparent;
     cursor: pointer;
 
-    &:focus { cursor: text; }
+    // &:hover {
+    //   // Prevent hover states from being noticeable on Cordova apps
+    //   color: rgba(0,0,50,.6);
+    // }
   }
   // Border between list items
-  & + .list-item { border-top: 1px solid #f0f9fb; }
+  & + .setting-item { border-top: 1px solid #f0f9fb; }
 }

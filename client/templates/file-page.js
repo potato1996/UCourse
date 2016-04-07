@@ -14,7 +14,7 @@ Template.filePage.helpers({
 
 Template.filePage.events({
   'click .js-close-file': function() {
-    //Router.go('current');
+    // Router.go('current');
     history.back();
   }
 });
