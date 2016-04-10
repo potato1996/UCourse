@@ -2,6 +2,9 @@
   <div class="setting-item {{jsAct}}">
     <a><p class="item-word">
         {{text}}
+        {{#if input}}
+          <input name={{input}} type={{inputType}} placeholder={{inputPlaceHolder}} />
+        {{/if}}
         <span class="right {{icon}}"></span>
     </p></a>
   </div>
@@ -9,10 +12,8 @@
 
 <template name="userSetting">
   <div class="page lists-show">
+
     <nav>
-        <!-- <div class="nav-group">
-          <a href="#" class="js-menu nav-item"><span class="icon-list-unordered" title="Show menu"></span></a>
-        </div> -->
         <h1 class="title-page"><span class="title-wrapper">Setting</span></h1>
         <div class="nav-group">
           <a href="#" class="js-menu nav-item"><span class="icon-list-unordered" title="Show menu"></span></a>
