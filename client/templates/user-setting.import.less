@@ -46,4 +46,23 @@
   }
   // Border between list items
   & + .setting-item { border-top: 1px solid #f0f9fb; }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    // Sizing
+    .font-s2;
+    .type-regular;
+    padding: 0rem 0; //total height ~48
+    line-height: 1.5rem !important;
+
+    // Style
+    .placeholder(@color-complementary);
+    border: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: @color-full;
+    outline: none;
+  }
 }

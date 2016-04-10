@@ -2,6 +2,12 @@
   <div class="setting-item {{jsAct}}">
     <a><p class="item-word">
         {{text}}
+        {{#if input}}
+          <input name={{input}} type={{inputType}} placeholder={{inputPlaceHolder}} />
+        {{/if}}
+        <!-- {{#if button}}
+          <button type={{button}} class="btn-primary">Join Now</button>
+        {{/if}} -->
         <span class="right {{icon}}"></span>
     </p></a>
   </div>
@@ -25,9 +31,11 @@
     </nav>
 
     <div class="content-scrollable list-items">
+
       {{#each settingItems}}
         {{> settingItem}}
       {{/each}}
+
     </div>
 
   </div>
