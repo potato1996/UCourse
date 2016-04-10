@@ -78,7 +78,7 @@
 <!-- end added -->
     </nav>
 
-    <div class="content-scrollable">
+    <div class="content-scrollable coursist-bg">
 
       {{#if showInfo}}
       <!-- 这里只是一个实验性页面，还有许多许多问题没有得到解决。
@@ -92,7 +92,7 @@
 
 <!-- edited by zhaozewei to divide the content into two parts: notices and files -->
 <!-- notices part -->
-        <div id="col-notice" class="content-scrollable-l">
+        <div id="col-notice" class="content-scrollable-l white-bg">
           <div class="ui one">
             {{#if todosReady}}
               {{#with _id}} {{! Establish new data context with only the '_id'
@@ -119,7 +119,7 @@
           </div>
         </div>
 <!-- files part -->
-        <div id="col-file" class="content-scrollable-r">
+        <div id="col-file" class="content-scrollable-r white-bg">
           <div class="no-margin ui two stackable cards">
             {{#if todosReady}}
               {{#with _id}} {{! Establish new data context with only the '_id'
