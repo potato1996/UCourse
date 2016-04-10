@@ -97,7 +97,7 @@ Template.userSetting.helpers({
         {text: "隐私"     , jsAct: "" },
         {text: "通用"     , jsAct: "js-page-common",    icon:"icon-arrow-right"},
         {text: "帮助与反馈", jsAct: "" },
-        {text: "关于"     , jsAct: "" },
+        {text: "关于"     , jsAct: "js-page-about" },
       ];
     }
   }
@@ -105,6 +105,9 @@ Template.userSetting.helpers({
 
 
 Template.userSetting.events({
+  'click .js-page-about': function() {
+    Router.go("about");
+  },
   'click .js-page-password': function() {
     Session.set("settingStatus", "password");
   },
