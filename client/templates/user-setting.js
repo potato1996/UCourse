@@ -27,8 +27,8 @@ Template.userSetting.helpers({
     switch (Session.get("settingStatus")) {
       case "account":
       return [
-        {text: "邮箱", jsAct: "" },
-        {text: "学号", jsAct: "" },
+        {text: "邮箱", jsAct: "js-set-email" },
+        {text: "学号", jsAct: "js-set-schoolID" },
         {text: "密码", jsAct: "js-page-password", icon:"icon-arrow-right" },
       ];
       case "password":
@@ -64,6 +64,32 @@ Template.userSetting.helpers({
           jsAct: "js-change-password"
         }
       ];
+      case "setEmail":
+      return [
+        {
+          text: "输入新邮箱：",
+          input: "newEmail",
+          inputType: "email",
+          inputPlaceHolder: "Email"
+        },
+        {
+          text: "提交",
+          jsAct: "js-change-email"
+        }
+      ];
+      case "setID":
+      return [
+        {
+          text: "输入学号：",
+          input: "newID",
+          inputType: "email",
+          inputPlaceHolder: "学号"
+        },
+        {
+          text: "提交",
+          jsAct: "js-change-schoolID"
+        }
+      ];
       default:
       return [
         {text: "账号"     , jsAct: "js-page-account" ,  icon:"icon-arrow-right"},
@@ -87,6 +113,12 @@ Template.userSetting.events({
   },
   'click .js-page-common': function() {
     Session.set("settingStatus", "common");
+  },
+  'click .js-set-email': function() {
+    Session.set("settingStatus", "setEmail");
+  },
+  'click .js-set-schoolID': function() {
+    Session.set("settingStatus", "setID");
   },
   'click .js-page-back': function() {
     var backPage = {
@@ -113,5 +145,11 @@ Template.userSetting.events({
     }else {
       changePassword(newpd1);
     }
+  },
+  'click .js-change-email': function() {
+    var newEmail = document.getElementsByName("newEmail")[0].value;
+  },
+  'click .js-change-schoolID': function() {
+    var newEmail = document.getElementsByName("newID")[0].value;
   },
 });

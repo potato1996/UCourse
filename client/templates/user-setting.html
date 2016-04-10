@@ -5,9 +5,6 @@
         {{#if input}}
           <input name={{input}} type={{inputType}} placeholder={{inputPlaceHolder}} />
         {{/if}}
-        <!-- {{#if button}}
-          <button type={{button}} class="btn-primary">Join Now</button>
-        {{/if}} -->
         <span class="right {{icon}}"></span>
     </p></a>
   </div>
@@ -15,10 +12,8 @@
 
 <template name="userSetting">
   <div class="page lists-show">
+
     <nav>
-        <!-- <div class="nav-group">
-          <a href="#" class="js-menu nav-item"><span class="icon-list-unordered" title="Show menu"></span></a>
-        </div> -->
         <h1 class="title-page"><span class="title-wrapper">Setting</span></h1>
         <div class="nav-group">
           <a href="#" class="js-menu nav-item"><span class="icon-list-unordered" title="Show menu"></span></a>
@@ -31,11 +26,9 @@
     </nav>
 
     <div class="content-scrollable list-items">
-
       {{#each settingItems}}
         {{> settingItem}}
       {{/each}}
-
     </div>
 
   </div>
