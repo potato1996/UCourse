@@ -75,6 +75,9 @@ Template.appBody.helpers({
   },
   lists: function() {
     //return Lists.find();
+    Meteor.subscribe('uc_course');
+    alert("c"+uc_course.count());
+    //alert("hhh");
     return uc_course.find();
   },
   activeListClass: function() {
