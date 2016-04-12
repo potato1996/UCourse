@@ -15,3 +15,12 @@ Meteor.publish('todos', function(listId) {
 
   return Todos.find({listId: listId});
 });
+
+// added by zhaozewei
+Meteor.publish('uc_course', function() {
+  if (this.userId) {
+    return uc_course.find({userId: this.userId});
+  } else {
+    this.ready();
+  }
+});

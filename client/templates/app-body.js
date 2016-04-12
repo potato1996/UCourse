@@ -74,7 +74,8 @@ Template.appBody.helpers({
     return Session.get(USER_MENU_KEY);
   },
   lists: function() {
-    return Lists.find();
+    //return Lists.find();
+    return uc_course.find();
   },
   activeListClass: function() {
     var current = Router.current();
@@ -128,9 +129,12 @@ Template.appBody.events({
   },
 
   'click .js-new-list': function() {
-    var list = {name: Lists.defaultName(), incompleteCount: 0};
-    list._id = Lists.insert(list);
+    //var list = {name: Lists.defaultName(), incompleteCount: 0};
+    var course = {name: uc_course.Name(), incompleteCount: 0};
+    //list._id = Lists.insert(list);
+    course._id = uc_course.insert(course);
 
-    Router.go('listsShow', list);
+    //Router.go('listsShow', list);
+    Router.go('listsShow', course);
   }
 });
