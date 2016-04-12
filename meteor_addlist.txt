@@ -2,5 +2,8 @@
 meteor add aldeed:simple-schema
 meteor add aldeed:collection2
 
-/*****  add ui-card ****/
+/*****  add ui-card  ****/
 meteor add semantic:ui-card
+
+/*****  add ui-button  ****/
+meteor add semantic:ui-button
