@@ -83,13 +83,16 @@ Template.appBody.helpers({
     //alert(this_courses.length().toString());
     var testprint = 123;
     //alert(Meteor.userId());
-    var this_courses_length = this_courses.length();
+    var this_courses_length = this_courses.length;
+    //alert(this_courses_length);
     var courses_id_array = new Array();
     for (var j = 0;j<this_courses_length;j++)
         {
             courses_id_array.push(this_courses[j]['course_id']);
         }
-      return Meteor.subscribe('fetch_uc_course_by_course_id',courses_id_array);
+      Meteor.subscribe('fetch_uc_course_by_course_id',courses_id_array);
+      //alert(uc_course.find().fetch().length);
+      return uc_course.find();
     
   },
   activeListClass: function() {
