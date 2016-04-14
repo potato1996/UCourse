@@ -73,12 +73,21 @@ Template.appBody.helpers({
   userMenuOpen: function() {
     return Session.get(USER_MENU_KEY);
   },
+//changed by Potato
   lists: function() {
     //return Lists.find();
-    Meteor.subscribe('uc_course');
-    alert("c"+uc_course.count());
+    Meteor.subscribe('uc_student_rl_course');
+    //alert("c"+uc_course.count());
     //alert("hhh");
-    return uc_course.find();
+    var this_courses = uc_student_rl_course.find().fetch();
+    var this_courses_length = this_courses.length();
+    var courses_id_array = new Array();
+    for (var j = 0;j<this_courses_length;j++)
+        {
+            courses_id_array.push(this_courses[j]['course_id']);
+        }
+      return Meteor.subscribe('uc_course',courses_id_array);
+    
   },
   activeListClass: function() {
     var current = Router.current();
@@ -136,6 +145,7 @@ Template.appBody.events({
     var course = {name: uc_course.Name(), incompleteCount: 0};
     //list._id = Lists.insert(list);
     course._id = uc_course.insert(course);
+    uc_student_rl_course.insert({student_id:Meteor.userId(),course_id:course._id,rank:0});
 
     //Router.go('listsShow', list);
     Router.go('listsShow', course);
