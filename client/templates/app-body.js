@@ -76,17 +76,20 @@ Template.appBody.helpers({
 //changed by Potato
   lists: function() {
     //return Lists.find();
-    Meteor.subscribe('uc_student_rl_course');
+    Meteor.subscribe('fetch_uc_student_rl_course');
     //alert("c"+uc_course.count());
     //alert("hhh");
     var this_courses = uc_student_rl_course.find().fetch();
+    //alert(this_courses.length().toString());
+    var testprint = 123;
+    //alert(Meteor.userId());
     var this_courses_length = this_courses.length();
     var courses_id_array = new Array();
     for (var j = 0;j<this_courses_length;j++)
         {
             courses_id_array.push(this_courses[j]['course_id']);
         }
-      return Meteor.subscribe('uc_course',courses_id_array);
+      return Meteor.subscribe('fetch_uc_course_by_course_id',courses_id_array);
     
   },
   activeListClass: function() {

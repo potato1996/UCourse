@@ -17,12 +17,12 @@ Meteor.publish('todos', function(listId) {
 });
 
 // added by zhaozewei
-Meteor.publish('uc_course', function(course_id_array) {
+Meteor.publish('fetch_uc_course_by_course_id', function(course_id_array) {
     return uc_course.find({_id: {$in : course_id_array}});
     
 
 });
 // add by potato
-Meteor.publish('uc_student_rl_course',function(){
+Meteor.publish('fetch_uc_student_rl_course',function(){
     return uc_student_rl_course.find({student_id: this.userId});          
 });
