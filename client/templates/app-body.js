@@ -147,6 +147,7 @@ Template.appBody.events({
   },
 
   'click .js-new-list': function() {
+// Changed by zhaozewei
     //var list = {name: Lists.defaultName(), incompleteCount: 0};
     var course = {name: uc_course.Name(), incompleteCount: 0};
     //list._id = Lists.insert(list);
