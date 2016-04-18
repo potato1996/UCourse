@@ -148,8 +148,9 @@ Template.appBody.events({
 
   'click .js-new-list': function() {
 // Changed by zhaozewei
+// Changed by Potato
     //var list = {name: Lists.defaultName(), incompleteCount: 0};
-    var course = {name: uc_course.Name(), incompleteCount: 0};
+    var course = {coursename: uc_course.Name(),schoolname:"pku",departmentname:"Unknown"};
     //list._id = Lists.insert(list);
     course._id = uc_course.insert(course);
     uc_student_rl_course.insert({student_id:Meteor.userId(),course_id:course._id,rank:0});

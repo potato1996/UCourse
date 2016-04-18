@@ -66,20 +66,26 @@ var saveList = function(list, template) {
   Session.set(EDITING_KEY, false);
   Lists.update(list._id, {$set: {name: template.$('[name=name]').val()}});
 }
-
+//changed by Potato
 var deleteList = function(list) {
   // ensure the last public list cannot be deleted.
-  if (! list.userId && Lists.find({userId: {$exists: false}}).count() === 1) {
-    return alert("Sorry, you cannot delete the final public list!");
-  }
+  //if (! list.userId && Lists.find({userId: {$exists: false}}).count() === 1) {
+    //return alert("Sorry, you cannot delete the final public list!");
+  //}
 
-  var message = "Are you sure you want to delete the list " + list.name + "?";
+  var message = "Are you sure you want to delete the list " + list.coursename + "?";
   if (confirm(message)) {
     // we must remove each item individually from the client
     Todos.find({listId: list._id}).forEach(function(todo) {
       Todos.remove(todo._id);
     });
-    Lists.remove(list._id);
+    curr_rl = uc_student_rl_course.find({course_id:list._id,student_id:Meteor.userId()}).fetch();
+    uc_student_rl_course.remove(curr_rl[0]['_id']);
+    //uc_student_rl_course.remove({course_id:list._id});
+    if(uc_student_rl_course.find({course_id:list._id}).count() === 0)
+    {
+        uc_course.remove(list._id);
+    }
 
     Router.go('home');
     return true;
