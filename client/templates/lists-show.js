@@ -223,7 +223,9 @@ Template.listsShow.events({
       checked: false,
       createdAt: new Date()
     });
-    Lists.update(this._id, {$inc: {incompleteCount: 1}});
+// Edited by zhaozewei
+    //Lists.update(this._id, {$inc: {incompleteCount: 1}});
+    uc_course.update(this._id);
     $input.val('');
   }
 });
