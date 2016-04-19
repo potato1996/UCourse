@@ -64,7 +64,9 @@ var editList = function(list, template) {
 
 var saveList = function(list, template) {
   Session.set(EDITING_KEY, false);
-  Lists.update(list._id, {$set: {name: template.$('[name=name]').val()}});
+// Edited by zhaozewei
+  //Lists.update(list._id, {$set: {name: template.$('[name=name]').val()}});
+  uc_course.update(list._id, {$set: {name: template.$('[name=name]').val()}});
 }
 //changed by Potato
 var deleteList = function(list) {
@@ -93,7 +95,7 @@ var deleteList = function(list) {
     return false;
   }
 };
-
+/* Deleted by zhaozewei, never use this function
 var toggleListPrivacy = function(list) {
   if (! Meteor.user()) {
     return alert("Please sign in or create an account to make private lists.");
@@ -110,7 +112,7 @@ var toggleListPrivacy = function(list) {
     Lists.update(list._id, {$set: {userId: Meteor.userId()}});
   }
 };
-
+*/
 Template.listsShow.events({
   'click .js-cancel': function() {
     Session.set(EDITING_KEY, false);

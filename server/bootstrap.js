@@ -1,6 +1,8 @@
 // if the database is empty on server start, create some sample data.
+// Edited by zhaozewei
 Meteor.startup(function () {
-  if (Lists.find().count() === 0) {
+  //if (Lists.find().count() === 0) {
+  if (uc_course.find().count() === 0) {
     var data = [
       {name: "软件工程",
        items: [
@@ -28,9 +30,21 @@ Meteor.startup(function () {
     ];
 
     var timestamp = (new Date()).getTime();
+/*
     _.each(data, function(list) {
       var list_id = Lists.insert({name: list.name,
         incompleteCount: list.items.length});
+
+      _.each(list.items, function(text) {
+        Todos.insert({listId: list_id,
+                      text: text,
+                      createdAt: new Date(timestamp)});
+        timestamp += 1; // ensure unique timestamp.
+      });
+    });
+*/
+    _.each(data, function(list) {
+      var list_id = uc_course.insert({coursename: list.name});
 
       _.each(list.items, function(text) {
         Todos.insert({listId: list_id,
