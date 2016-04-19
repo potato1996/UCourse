@@ -225,7 +225,7 @@ Template.listsShow.events({
     });
 // Edited by zhaozewei
     //Lists.update(this._id, {$inc: {incompleteCount: 1}});
-    uc_course.update(this._id);
+    //uc_course.update(this._id);
     $input.val('');
   }
 });
