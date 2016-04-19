@@ -21,14 +21,14 @@
 
         <div class="list-todos">
         {{#each lists}}
-          <a href="{{pathFor 'listsShow'}}" class="list-todo {{activeListClass}}" title="{{coursename}}">
+          <a href="{{pathFor 'listsShow'}}" class="list-todo {{activeListClass}}" title="{{name}}">
             {{#if userId}}
               <span class="icon-lock"></span>
             {{/if}}
             {{#if incompleteCount}}
               <span class="count-list">{{incompleteCount}}</span>
             {{/if}}
-            {{coursename}}
+            {{name}}
           </a>
         {{/each}}
         <a class="js-new-list link-list-new"><span class="icon-plus"></span>New Course</a>

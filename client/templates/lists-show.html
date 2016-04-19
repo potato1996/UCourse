@@ -31,8 +31,8 @@
             </select>
             <span class="icon-cog"></span>
           </div>
-          <div class="options-web">
 
+          <div class="options-web">
 <!-- TODO -->
 <!-- changed by xujiahao, when click this icom, crouse info will be show -->
 <!-- Action code has been added in lists-show.js -->
@@ -93,7 +93,7 @@
 <!-- edited by zhaozewei to divide the content into two parts: notices and files -->
 <!-- notices part -->
         <div id="col-notice" class="content-scrollable-l white-bg">
-          <div class="ui one">
+          <div class="ui one cards no-margin">
             {{#if todosReady}}
               {{#with _id}} {{! Establish new data context with only the '_id'
                               field. This way, when the 'incompleteCount' field
@@ -120,7 +120,7 @@
         </div>
 <!-- files part -->
         <div id="col-file" class="content-scrollable-r white-bg">
-          <div class="no-margin ui two stackable cards">
+          <div class="no-margin ui four cards">
             {{#if todosReady}}
               {{#with _id}} {{! Establish new data context with only the '_id'
                               field. This way, when the 'incompleteCount' field
