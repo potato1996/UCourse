@@ -93,7 +93,7 @@ Template.appBody.helpers({
       Meteor.subscribe('fetch_uc_course_by_course_id',courses_id_array);
       //alert(uc_course.find().fetch().length);
       return uc_course.find();
-    
+
   },
   activeListClass: function() {
     var current = Router.current();
@@ -157,5 +157,16 @@ Template.appBody.events({
 
     //Router.go('listsShow', list);
     Router.go('listsShow', course);
-  }
+  },
+  'submit .js-course-new': function(event) {
+    event.preventDefault();
+
+    var $input = $(event.target).find('[type=course-searcher]');
+    if (! $input.val())
+      return;
+
+    Session.set('addCoursePageStatus','list');
+    Session.set('searchCourseKeyword',$input.val());
+    Router.go('addCourse');
+  },
 });
