@@ -46,7 +46,10 @@ Template.listsShow.helpers({
   },
 
   todos: function(listId) {
-    return Todos.find({listId: listId}, {sort: {createdAt : -1}});
+    //return Todos.find({listId: listId}, {sort: {createdAt : -1}});
+      Meteor.subscribe('fetch_notification_by_course_id',listId);
+      return uc_notification.find({sort: {create_time: -1}});
+      
   },
   // 协助获取当前是否正在显示课程信息的 Helper
   showInfo: function(){
@@ -66,7 +69,7 @@ var saveList = function(list, template) {
   Session.set(EDITING_KEY, false);
 // Edited by zhaozewei
   //Lists.update(list._id, {$set: {name: template.$('[name=name]').val()}});
-  uc_course.update(list._id, {$set: {name: template.$('[name=name]').val()}});
+  uc_course.update(list._id, {$set: {coursename: template.$('[name=coursename]').val()}});
 }
 //changed by Potato
 var deleteList = function(list) {
@@ -78,9 +81,9 @@ var deleteList = function(list) {
   var message = "Are you sure you want to delete the list " + list.coursename + "?";
   if (confirm(message)) {
     // we must remove each item individually from the client
-    Todos.find({listId: list._id}).forEach(function(todo) {
-      Todos.remove(todo._id);
-    });
+    //Todos.find({listId: list._id}).forEach(function(todo) {
+      //Todos.remove(todo._id);
+    //});
     curr_rl = uc_student_rl_course.find({course_id:list._id,student_id:Meteor.userId()}).fetch();
     uc_student_rl_course.remove(curr_rl[0]['_id']);
     //uc_student_rl_course.remove({course_id:list._id});
@@ -217,12 +220,12 @@ Template.listsShow.events({
     if (! $input.val())
       return;
 
-    Todos.insert({
-      listId: this._id,
-      text: $input.val(),
-      checked: false,
-      createdAt: new Date()
-    });
+    //Todos.insert({
+    //  listId: this._id,
+    //  text: $input.val(),
+    //  checked: false,
+    //  createdAt: new Date()
+    //});
 // Edited by zhaozewei
     //Lists.update(this._id, {$inc: {incompleteCount: 1}});
     //uc_course.update(this._id);
