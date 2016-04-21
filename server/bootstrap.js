@@ -2,6 +2,7 @@
 // Edited by zhaozewei
 Meteor.startup(function () {
   //if (Lists.find().count() === 0) {
+    /*
   if (uc_course.find().count() === 0) {
     var data = [
       {name: "软件工程",
@@ -30,7 +31,6 @@ Meteor.startup(function () {
     ];
 
     var timestamp = (new Date()).getTime();
-/*
     _.each(data, function(list) {
       var list_id = Lists.insert({name: list.name,
         incompleteCount: list.items.length});
@@ -42,7 +42,6 @@ Meteor.startup(function () {
         timestamp += 1; // ensure unique timestamp.
       });
     });
-*/
     _.each(data, function(list) {
       var list_id = uc_course.insert({coursename: list.name});
 
@@ -53,5 +52,5 @@ Meteor.startup(function () {
         timestamp += 1; // ensure unique timestamp.
       });
     });
-  }
+  }*/
 });
