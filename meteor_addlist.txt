@@ -7,3 +7,6 @@ meteor add semantic:ui-card
 
 /*****  add ui-button  ****/
 meteor add semantic:ui-button
+
+/*****  add ui-accordion  ****/
+meteor add semantic:ui-accordion

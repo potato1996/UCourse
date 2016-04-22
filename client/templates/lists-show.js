@@ -34,6 +34,12 @@ Template.listsShow.onRendered(function() {
       });
     }
   };
+
+
+// zzw
+  $('.ui.accordion')
+    .accordion()
+  ;
 });
 
 Template.listsShow.helpers({
