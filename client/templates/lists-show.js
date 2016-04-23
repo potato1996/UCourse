@@ -57,6 +57,20 @@ Template.listsShow.helpers({
       return uc_notification.find({sort: {create_time: -1}});
       
   },
+
+// Added by zhaozewei
+// TODO
+  filelistReady: function() {
+    return Router.current().filelistHandle.ready();
+  },
+
+  filelist: function(listId) {
+    //return Todos.find({listId: listId}, {sort: {createdAt : -1}});
+    Meteor.subscribe('fetch_file_by_course_id', listId);
+    return uc_file.find({sort: {create_time: -1}});
+  },
+// End added
+
   // 协助获取当前是否正在显示课程信息的 Helper
   showInfo: function(){
     return Session.get(INFO);
