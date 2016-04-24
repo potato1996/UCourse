@@ -67,5 +67,5 @@ Meteor.publish('fetch_notification_by_course_id',function(course_id){
 });
 // TODO
 Meteor.publish('fetch_file_by_course_id',function(course_id){
-    
+    return uc_file.find();
 });
