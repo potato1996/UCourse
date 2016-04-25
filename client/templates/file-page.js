@@ -1,14 +1,14 @@
 // created by zhaozewei
 // TODO
+var FILE_NAME = 'fileName';
+var FILE_PATH = 'filePath';
+
 Template.filePage.helpers({
-  fileTitle: function(){
-    return Session.get("fileTitle");
+  fileTitle: function() {
+    return Session.get(FILE_NAME);
   },
-  activeListClass: function() {
-    var current = Router.current();
-    if (current.route.name === 'listsShow' && current.params._id === this._id) {
-      return 'active';
-    }
+  fileURL: function() {
+    return Session.get(FILE_PATH);
   },
 });
 

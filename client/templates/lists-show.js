@@ -244,7 +244,15 @@ Template.listsShow.events({
     var $input = $(event.target).find('[type=text]');
     if (! $input.val())
       return;
-
+/* Added by zhaozewei temporally */
+/*
+    uc_notification.insert({
+      _id: this._id,
+      notificationname: $input.val(),
+      description: $input.val() + $input.val(),
+      created_time: new Date()
+    });
+*/
     //Todos.insert({
     //  listId: this._id,
     //  text: $input.val(),
