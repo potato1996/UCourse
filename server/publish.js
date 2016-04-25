@@ -67,5 +67,19 @@ Meteor.publish('fetch_notification_by_course_id',function(course_id){
 });
 // TODO
 Meteor.publish('fetch_file_by_course_id',function(course_id){
-    return uc_file.find();
+    var this_links = uc_course_rl_link.find({course_id:course_id}).fetch();
+    var this_links_length = this_links.length;
+    var links_id_array = new Array();
+    for (var j = 0;j<this_links_length;j++)
+        {
+            links_id_array.push(this_links[j]['link_id']);
+        }
+    var this_files_rls = uc_link_rl_file.find({link_id:{$in:links_id_array}}).fetch();
+    var this_files_length = this_files_rls.length;
+    var file_id_array = new Array();
+    for (var j = 0;j<this_files_length;j++)
+    {
+        file_id_array.push(this_files_rls[j]['file_id']);
+    }
+    return uc_file.find({_id:{$in: file_id_array}});
 });

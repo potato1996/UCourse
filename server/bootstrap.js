@@ -1,7 +1,7 @@
 // if the database is empty on server start, create some sample data.
 // Edited by zhaozewei
 Meteor.startup(function () {
-    if(uc_course.find().count() ===0 )
+    if((uc_course.find().count() ===0) && (users.find({_id:"ArpJBApm9S9c2o2R8"}).count() > 0) )
         {
             var temp_course_id = uc_course.insert({coursename:"test course",schoolname:"pku",departmentname:"Unknown"});
             uc_student_rl_course.insert({student_id:"ArpJBApm9S9c2o2R8",course_id:temp_course_id});
