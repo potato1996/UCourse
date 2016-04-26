@@ -29,6 +29,12 @@ var getNameByID = function(){
   return Session.get("courseID");
 };
 
+var addCourseByID = function(){
+  var courseID = Session.get("courseID");
+
+  alert('addCourseByID works.');
+}
+
 //==================================================
 
 Template.addCourse.helpers({
@@ -58,5 +64,6 @@ Template.addCourse.events({
   },
   'click .js-page-back': function(){
     Session.set("addCoursePageStatus","list");
-  }
+  },
+  'click .js-add-course': addCourseByID,
 });

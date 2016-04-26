@@ -16,3 +16,24 @@
     background: transparent;
   }
 }
+
+.addCourseBtn {
+  // Sizing
+  .font-s2;
+  line-height: 20px !important; //override line-height always so we can use em's to size
+  padding: 0.5em 1.25em; // 48px tall
+
+  // Style
+  .title-caps;
+  .transition( all 200ms ease-in );
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  text-decoration: none !important; //prevents global <a> styles from applying
+  vertical-align: middle;
+  white-space: nowrap;
+//  background-color: rgba(0,0,255,.1);
+
+  box-shadow: lighten(#517096, 5%) 0 0 10px 1px inset;
+
+}
