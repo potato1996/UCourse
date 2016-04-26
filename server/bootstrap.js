@@ -5,12 +5,13 @@ Meteor.startup(function () {
         {
             var temp_course_id = uc_course.insert({coursename:"test course",schoolname:"pku",departmentname:"Unknown",description:"啦啦啦啦",isRecommend:1});
             uc_student_rl_course.insert({student_id:"ArpJBApm9S9c2o2R8",course_id:temp_course_id});
-            uc_student_rl_course.insert({student_id:"cAxJNzGvjepmZN3PL",course_id:temp_course_id}); //zzw
+            uc_student_rl_course.insert({student_id:"ArpJBApm9S9c2o2R8",course_id:temp_course_id}); 
+            
             var temp_link_id = uc_link.insert({linkname:"test link",linktype:0,url:"",account:"test account",passwd:"test passwd"});
             var temp_file_id = uc_file.insert({filename:"test file",path:"http://xxgk.pku.edu.cn/docs/20151110194557498920.pdf",description:"hhh",create_time:new Date()});
             uc_course_rl_link.insert({link_id:temp_link_id,course_id:temp_course_id});
             uc_link_rl_file.insert({link_id:temp_link_id,file_id:temp_file_id});
-            
+
             var temp_notification_id1 = uc_notification.insert({notificationname:"test notice 1",description:"1",create_time:new Date()});
             var temp_notification_id2 = uc_notification.insert({notificationname:"test notice 2",description:"2",create_time:new Date()});
             var temp_notification_id3 = uc_notification.insert({notificationname:"test notice 3",description:"3",create_time:new Date()});
@@ -18,7 +19,7 @@ Meteor.startup(function () {
             uc_link_rl_notification.insert({link_id:temp_link_id,notification_id:temp_notification_id1});
             uc_link_rl_notification.insert({link_id:temp_link_id,notification_id:temp_notification_id2});
             uc_link_rl_notification.insert({link_id:temp_link_id,notification_id:temp_notification_id3});
-            
+
         }
   //if (Lists.find().count() === 0) {
     /*
