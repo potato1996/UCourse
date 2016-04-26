@@ -54,9 +54,9 @@ Template.listsShow.helpers({
   todos: function(listId) {
     //return Todos.find({listId: listId}, {sort: {createdAt : -1}});
       Meteor.subscribe('fetch_notification_by_course_id',listId);
-      //return uc_notification.find({sort: {create_time: -1}});
+      return uc_notification.find({},{sort: {create_time: -1}});
       //alert(uc_notification.find().count());
-      return uc_notification.find();
+      //return uc_notification.find().sort({create_time:-1});
       
   },
 
@@ -70,9 +70,9 @@ Template.listsShow.helpers({
     //return Todos.find({listId: listId}, {sort: {createdAt : -1}});
       //alert("hhh");
     Meteor.subscribe('fetch_file_by_course_id', listId);
-    //return uc_file.find({sort: {create_time: -1}});
+    return uc_file.find({},{sort: {create_time: -1}});
       //alert(uc_file.find().count());
-      return uc_file.find();
+      //return uc_file.find().sort({create_time:-1});
   },
 // End added
 
