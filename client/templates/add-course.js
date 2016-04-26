@@ -20,7 +20,8 @@ var searchCourse = function(keyword){
 
 var getInfoById = function(){
   // 该函数从 Session.get("courseID") 中读取 id 字符串，返回该课程的名字。
-  return Session.get("courseID");
+  var courseId = Session.get("courseID");
+  return courseId;
 };
 
 var getNameByID = function(){
