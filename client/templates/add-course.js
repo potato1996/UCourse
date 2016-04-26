@@ -17,12 +17,12 @@ var searchCourse = function(keyword){
     
     for(var j = 0;j<listlen;j++)
     {
-        var info = "课程名：";
-        info.concat(search_result_list[j]['coursename']);
-        info.concat("学校");
-        info.concat(search_result_list[j]['schoolname']);
-        info.concat("院系：");
-        info.concat(search_result_list[j]['departmentname']);
+        var info = "  课程名: ";
+        info += search_result_list[j]['coursename'];
+        info += "  学校: ";
+        info += search_result_list[j]['schoolname'];
+        info += "  院系: ";
+        info += search_result_list[j]['departmentname'];
         var tempdata = {text:info,id:search_result_list[j]['_id'],courseinfo:search_result_list[j]['description'],coursename:search_result_list[j]['coursename']};
         searchResult.push(tempdata);
     }
@@ -43,12 +43,12 @@ var getInfoById = function(){
     resultlen = searchResult.length;
     for(var j = 0;j<resultlen;++j)
         {
-           if(searchResult[j]._id === courseId)
+           if(searchResult[j].id === courseId)
                {
                    return searchResult[j].courseinfo;
                }
         }
-    return courseId;
+    return "Not found";
 };
 
 var getNameByID = function(){
@@ -58,18 +58,19 @@ var getNameByID = function(){
     resultlen = searchResult.length;
     for(var j = 0;j<resultlen;++j)
         {
-           if(searchResult[j]._id === courseId)
+           if(searchResult[j].id === courseId)
                {
                    return searchResult[j].coursename;
                }
         }
-    return courseId;
+    return "Not found";
 };
 
 var addCourseByID = function(){
   var courseID = Session.get("courseID");
 
-  alert('addCourseByID works.');
+  Meteor.subscribe('add_course_by_rec_course_id',courseID)
+  //alert('addCourseByID works.');
 }
 
 //==================================================
