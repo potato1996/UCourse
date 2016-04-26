@@ -30,6 +30,9 @@ Meteor.publish('add_course_by_rec_course_id',function(rec_course_id){
     return uc_student_rl_course.find({student_id:this.userId});
     
 });
+Meteor.publish('fetch_single_course_by_id',function(single_course_id){
+   return uc_course.find({_id:single_course_id}); 
+});
 // add by potato
 Meteor.publish('fetch_uc_student_rl_course',function(){
     return uc_student_rl_course.find({student_id: this.userId});          
