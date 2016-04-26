@@ -3,9 +3,10 @@
 Meteor.startup(function () {
     if((uc_course.find().count() ===0))
         {
-            var temp_course_id = uc_course.insert({coursename:"test course",schoolname:"pku",departmentname:"Unknown"});
-            uc_student_rl_course.insert({student_id:"N4Kaj5PhB8FW2TDCm",course_id:temp_course_id});
-            uc_student_rl_course.insert({student_id:"N4Kaj5PhB8FW2TDCm",course_id:temp_course_id}); //zzw
+            var temp_course_id = uc_course.insert({coursename:"test course",schoolname:"pku",departmentname:"Unknown",description:"啦啦啦啦",isRecommend:1});
+            uc_student_rl_course.insert({student_id:"ArpJBApm9S9c2o2R8",course_id:temp_course_id});
+            uc_student_rl_course.insert({student_id:"ArpJBApm9S9c2o2R8",course_id:temp_course_id}); 
+            
             var temp_link_id = uc_link.insert({linkname:"test link",linktype:0,url:"",account:"test account",passwd:"test passwd"});
             var temp_file_id = uc_file.insert({filename:"test file",path:"http://xxgk.pku.edu.cn/docs/20151110194557498920.pdf",description:"hhh",create_time:new Date()});
             uc_course_rl_link.insert({link_id:temp_link_id,course_id:temp_course_id});
