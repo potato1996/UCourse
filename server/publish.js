@@ -20,8 +20,15 @@ Meteor.publish('todos', function(listId) {
 // added by zhaozewei
 Meteor.publish('fetch_uc_course_by_course_id', function(course_id_array) {
     return uc_course.find({_id: {$in : course_id_array}});
+});
+// 2016-4-26 by potato
+Meteor.publish('fetch_rec_course_by_name', function(course_name){
+    return uc_course.find({coursename:course_name,isRecommend:1});
+});
+Meteor.publish('add_course_by_rec_course_id',function(rec_course_id){
+    uc_student_rl_course.insert({student_id: this.userId,course_id:rec_course_id});
+    return uc_student_rl_course.find({student_id:this.userId});
     
-
 });
 // add by potato
 Meteor.publish('fetch_uc_student_rl_course',function(){
@@ -83,3 +90,4 @@ Meteor.publish('fetch_file_by_course_id',function(course_id){
     }
     return uc_file.find({_id:{$in: file_id_array}});
 });
+//2016-4-26 by potato

@@ -112,10 +112,10 @@ var deleteList = function(list) {
     curr_rl = uc_student_rl_course.find({course_id:list._id,student_id:Meteor.userId()}).fetch();
     uc_student_rl_course.remove(curr_rl[0]['_id']);
     //uc_student_rl_course.remove({course_id:list._id});
-    if(uc_student_rl_course.find({course_id:list._id}).count() === 0)
-    {
-        uc_course.remove(list._id);
-    }
+    //if(uc_student_rl_course.find({course_id:list._id}).count() === 0)
+    //{
+    //    uc_course.remove(list._id);
+    //}
 
     Router.go('home');
     return true;
