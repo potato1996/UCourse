@@ -160,5 +160,8 @@ Template.appBody.events({
   },
   'click .js-add-course-page': function(){
     Router.go('addCourse');
+    Session.set("addCoursePageStatus", "list");
+    Session.set("searchCourseKeyword","");
+    Session.set("courseID","");
   },
 });
