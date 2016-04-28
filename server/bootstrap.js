@@ -4,7 +4,7 @@ Meteor.startup(function () {
     if((uc_course.find().count() ===0))
         {
             var temp_course_id = uc_course.insert({coursename:"test course",schoolname:"pku",departmentname:"Unknown",description:"啦啦啦啦",isRecommend:1});
-            uc_student_rl_course.insert({student_id:"ArpJBApm9S9c2o2R8",course_id:temp_course_id,rank:1});
+            //uc_student_rl_course.insert({student_id:"ArpJBApm9S9c2o2R8",course_id:temp_course_id,rank:1});
             var temp_of_course_id = of_course.insert({coursename:"test course",schoolname:"pku",departmentname:"Unknown",description:"啦啦啦啦", uc_course_id: temp_course_id});
             
             var temp_link_id = uc_link.insert({linkname:"test link",linktype:0,url:"",account:"test account",passwd:"test passwd"});
