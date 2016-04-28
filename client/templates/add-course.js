@@ -91,8 +91,6 @@ Template.addCourse.helpers({
   },
 });
 
-todebug="";
-
 Template.addCourse.events({
   'click .js-course-info': function(event,template) {
     // 下面两行代码从 事件对象 中提取 ID，使用正则表达式。
@@ -105,4 +103,15 @@ Template.addCourse.events({
     Session.set("addCoursePageStatus","list");
   },
   'click .js-add-course': addCourseByID,
+  'submit .js-course-new': function(event) {
+    event.preventDefault();
+
+    var $input = $(event.target).find('[id=the-course-searcher]');
+    if (! $input.val())
+      return;
+
+    Session.set('addCoursePageStatus','list');
+    Session.set('searchCourseKeyword',$input.val());
+    Router.go('addCourse');
+  },
 });

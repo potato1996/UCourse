@@ -158,15 +158,7 @@ Template.appBody.events({
     //Router.go('listsShow', list);
     Router.go('listsShow', course);
   },
-  'submit .js-course-new': function(event) {
-    event.preventDefault();
-
-    var $input = $(event.target).find('[type=course-searcher]');
-    if (! $input.val())
-      return;
-
-    Session.set('addCoursePageStatus','list');
-    Session.set('searchCourseKeyword',$input.val());
+  'click .js-add-course-page': function(){
     Router.go('addCourse');
   },
 });
