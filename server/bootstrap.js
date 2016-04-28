@@ -3,7 +3,6 @@
 Meteor.startup(function () {
     if((uc_course.find().count() ===0))
         {
-
             var temp_course_id = uc_course.insert({
               coursename:"软件工程",
               schoolname:"北京大学",
