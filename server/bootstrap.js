@@ -10,7 +10,7 @@ Meteor.startup(function () {
               description:"软件工程（英语：Software Engineering[1]）1968年秋季，NATO（北約）的科技委員會召集了近50名一流的編程人員、計算機科學家和工業界巨頭，討論和制定擺脫“軟體危機”的對策。在那次會議上第一次提出了軟體工程（software engineering）這個概念，研究和应用如何以系统性的、规范化的、可定量的过程化方法去开发和维护软件，以及如何把经过时间考验而证明正确的管理技术和当前能够得到的最好的技术方法结合起来的学科。它涉及到程序设计语言、数据库、软件开发工具、系统平台、标准、设计模式等方面。",
               isRecommend:1,
             });
-            uc_student_rl_course.insert({student_id:"ArpJBApm9S9c2o2R8",course_id:temp_course_id,rank:1});
+            //uc_student_rl_course.insert({student_id:"ArpJBApm9S9c2o2R8",course_id:temp_course_id,rank:1});
             var temp_of_course_id = of_course.insert({
               coursename:"软件工程",
               schoolname:"北京大学",

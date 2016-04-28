@@ -103,7 +103,7 @@ var deleteList = function(list) {
     //return alert("Sorry, you cannot delete the final public list!");
   //}
 
-  var message = "Are you sure you want to delete the list " + list.coursename + "?";
+  var message = "您确定要删除课程 " + list.coursename + " 吗?";
   if (confirm(message)) {
     // we must remove each item individually from the client
     //Todos.find({listId: list._id}).forEach(function(todo) {

@@ -7,6 +7,11 @@ Session.setDefault("courseID","123");
 var searchResult = new Array();
 
 var searchCourse = function(keyword){
+    searchResult = [];
+    if(keyword === "")
+        {
+            return searchResult;
+        }
   // 该函数接受 keyword 字符串，返回 对象数组，对象含有 text 和 id 两个属性。
   // text 是要显示的课程名、基本信息等， id 为请求详细信息、选课时用的 id。
   // id 是个字符串
@@ -14,7 +19,6 @@ var searchCourse = function(keyword){
     Meteor.subscribe('fetch_rec_course_by_name',keyword);
     var search_result_list = of_course.find({}).fetch();
     var listlen = search_result_list.length;
-    searchResult = [];
 
     for(var j = 0;j<listlen;j++)
     {
