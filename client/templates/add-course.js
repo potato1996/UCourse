@@ -10,7 +10,7 @@ var searchCourse = function(keyword){
   // 该函数接受 keyword 字符串，返回 对象数组，对象含有 text 和 id 两个属性。
   // text 是要显示的课程名、基本信息等， id 为请求详细信息、选课时用的 id。
   // id 是个字符串
-    alert(keyword);
+    // alert(keyword);
     Meteor.subscribe('fetch_rec_course_by_name',keyword);
     var search_result_list = uc_course.find({}).fetch();
     var listlen = search_result_list.length;
