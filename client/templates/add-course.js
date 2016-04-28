@@ -11,7 +11,7 @@ var searchCourse = function(keyword){
   // text 是要显示的课程名、基本信息等， id 为请求详细信息、选课时用的 id。
   // id 是个字符串
     Meteor.subscribe('fetch_rec_course_by_name',keyword);
-    var search_result_list = uc_course.find({}).fetch();
+    var search_result_list = of_course.find({}).fetch();
     var listlen = search_result_list.length;
     searchResult = [];
     
@@ -23,7 +23,7 @@ var searchCourse = function(keyword){
         info += search_result_list[j]['schoolname'];
         info += "  院系: ";
         info += search_result_list[j]['departmentname'];
-        var tempdata = {text:info,id:search_result_list[j]['_id'],courseinfo:search_result_list[j]['description'],coursename:search_result_list[j]['coursename']};
+        var tempdata = {text:info,id:search_result_list[j]['uc_course_id'],courseinfo:search_result_list[j]['description'],coursename:search_result_list[j]['coursename']};
         searchResult.push(tempdata);
     }
     
