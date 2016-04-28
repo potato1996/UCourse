@@ -25,7 +25,7 @@ Meteor.publish('fetch_uc_course_by_course_id', function(course_id_array) {
 Meteor.publish('fetch_rec_course_by_name', function(course_name){
     //return uc_course.find({coursename:course_name,isRecommend:1});
     
-    return of_course.find({coursename:course_name});
+    return of_course.find({coursename:{$regex:course_name}});
 });
 Meteor.publish('add_course_by_rec_course_id',function(rec_course_id){
     if(uc_student_rl_course.find({student_id: this.userId,course_id:rec_course_id}).count() === 0)
