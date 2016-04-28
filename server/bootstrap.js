@@ -19,9 +19,12 @@ Meteor.startup(function () {
               uc_course_id: temp_course_id});
 
             var temp_link_id = uc_link.insert({linkname:"test link",linktype:0,url:"",account:"test account",passwd:"test passwd"});
-            var temp_file_id = uc_file.insert({filename:"第一周课件",path:"http://xxgk.pku.edu.cn/docs/20151110194557498920.pdf",description:"第一周课件",create_time:new Date()});
+            var temp_file_id1 = uc_file.insert({filename:"第一周课件",path:"http://121.42.173.75:9000/week0.pdf",description:"第一周课件",create_time:new Date()});
             uc_course_rl_link.insert({link_id:temp_link_id,course_id:temp_course_id});
-            uc_link_rl_file.insert({link_id:temp_link_id,file_id:temp_file_id});
+            uc_link_rl_file.insert({link_id:temp_link_id,file_id:temp_file_id1});
+            
+            var temp_file_id2 = uc_file.insert({filename:"第二周课件",path:"http://121.42.173.75:9000/week1.pdf",description:"第二周课件",create_time:new Date()});
+            uc_link_rl_file.insert({link_id:temp_link_id,file_id:temp_file_id2});
 
             var temp_notification_id1 = uc_notification.insert({
               notificationname:"第一周作业",
