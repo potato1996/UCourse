@@ -77,9 +77,9 @@ Template.listsShow.helpers({
 // End added
 
   // 协助获取当前是否正在显示课程信息的 Helper
-  showInfo: function(){
-    return Session.get(INFO);
-  }
+  //showInfo: function(){
+    //return Session.get(INFO);
+  //}
 });
 
 var editList = function(list, template) {
@@ -141,6 +141,11 @@ var toggleListPrivacy = function(list) {
   }
 };
 */
+// Added by zhaozewei
+var showInformation = function (list, template) {
+  Router.go('course-info');
+};
+
 Template.listsShow.events({
   'click .js-cancel': function() {
     Session.set(EDITING_KEY, false);
@@ -180,7 +185,8 @@ Template.listsShow.events({
     } else {
 // edited by zhaozewei, to change the function of the 'option', TODO
       //toggleListPrivacy(this, template);
-      Session.set(INFO, !Session.get(INFO));
+      //Session.set(INFO, !Session.get(INFO));
+      showInformation(this, template);
     }
 
     event.target.selectedIndex = 0;
@@ -204,14 +210,8 @@ Template.listsShow.events({
 
   // 注册显示列表功能
   'click .js-show-info': function(event, template) {
-    // if(!Session.get(INFO)){
-    //   // 非信息显示状态下点击按钮，显示课程信息
-    //
-    // }
-    // else{
-    //
-    // }
-    Session.set(INFO, !Session.get(INFO));
+    //Session.set(INFO, !Session.get(INFO));
+    showInformation(this, template);
   },
 
 // added by zhaozewei, to implement the switch(notice/file) function
