@@ -11,7 +11,7 @@ Meteor.startup(function () {
               isRecommend:1,
             });
             //uc_student_rl_course.insert({student_id:"ArpJBApm9S9c2o2R8",course_id:temp_course_id,rank:1});
-            uc_student_rl_course.insert({student_id:"XbusW8dYYMBRu9gnE", course_id:temp_course_id, rank:1});  //zzw
+            uc_student_rl_course.insert({student_id:"PkxyARbRauLtWTjqR", course_id:temp_course_id, rank:1});  //zzw
 
             var temp_of_course_id = of_course.insert({
               coursename:"软件工程",
@@ -27,6 +27,9 @@ Meteor.startup(function () {
             
             var temp_file_id2 = uc_file.insert({filename:"第二周课件",path:"http://121.42.173.75:9000/week1.pdf",description:"第二周课件",create_time:new Date()});
             uc_link_rl_file.insert({link_id:temp_link_id,file_id:temp_file_id2});
+
+            var temp_file_id3 = uc_file.insert({filename:"第三周课件", path:"http://xxgk.pku.edu.cn/docs/20151110194557498920.pdf", description:"第三周课件", create_time:new Date()});
+            uc_link_rl_file.insert({link_id:temp_link_id, file_id:temp_file_id3});
 
             var temp_notification_id1 = uc_notification.insert({
               notificationname:"第一周作业",
