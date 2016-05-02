@@ -13,8 +13,14 @@ Template.fileItem.helpers({
   }
 });
 
+var showFile = function (list, template) {
+  Session.set(FILE_NAME, list.filename);
+  Session.set(FILE_PATH, list.path);
+  Router.go('file-page');
+};
+
 Template.fileItem.events({
-  'click .js-show-file': function() {
-    Router.go('file-page');
+  'click .js-show-file': function(event, template) {
+    showFile(this, template);
   }
 });

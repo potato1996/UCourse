@@ -11,6 +11,8 @@ Meteor.startup(function () {
               isRecommend:1,
             });
             //uc_student_rl_course.insert({student_id:"ArpJBApm9S9c2o2R8",course_id:temp_course_id,rank:1});
+            uc_student_rl_course.insert({student_id:"XbusW8dYYMBRu9gnE", course_id:temp_course_id, rank:1});  //zzw
+
             var temp_of_course_id = of_course.insert({
               coursename:"软件工程",
               schoolname:"北京大学",
