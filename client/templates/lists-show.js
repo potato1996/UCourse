@@ -2,8 +2,12 @@ var EDITING_KEY = 'editingList';
 Session.setDefault(EDITING_KEY, false);
 
 // 用于标记是否是课程信息显示状态的变量
-var INFO = "showInfo";
-Session.setDefault(INFO, false);
+//var INFO = "showInfo";
+//Session.setDefault(INFO, false);
+
+// Added by zhaozewei
+var INFO_KEY = "Info";
+var COURSENAME_KEY = "CourseName";
 
 // Track if this is the first time the list template is rendered
 var firstRender = true;
@@ -141,8 +145,11 @@ var toggleListPrivacy = function(list) {
   }
 };
 */
+
 // Added by zhaozewei
 var showInformation = function (list, template) {
+  Session.set(COURSENAME_KEY, list.coursename);
+  Session.set(INFO_KEY, list.description);
   Router.go('course-info');
 };
 

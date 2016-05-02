@@ -1,7 +1,11 @@
 //created by zhaozewei
 var INFO_KEY = "Info";
+var COURSENAME_KEY = "CourseName";
 
 Template.courseInfo.helpers({
+  GetName: function() {
+    return Session.get(COURSENAME_KEY);
+  },
   GetInfo: function() {
     return Session.get(INFO_KEY);
   }
