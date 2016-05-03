@@ -12,14 +12,18 @@
 
     <nav>
         <h1 class="title-page"><span class="title-wrapper">New Course</span></h1>
-        <div class="nav-group">
-          <a href="#" class="js-menu nav-item"><span class="icon-list-unordered" title="Show menu"></span></a>
-        </div>
-        <div class="nav-group right">
-          <a class="js-page-back nav-item">
-            <span class="icon-circle-left" title="Go Back"></span>
-          </a>
-        </div>
+          <div class="nav-group">
+            <a href="#" class="js-menu nav-item"><span class="icon-list-unordered" title="Show menu"></span></a>
+          </div>
+
+        {{#if showCourseList}}
+          {{else}}
+          <div class="nav-group right">
+            <a class="js-page-back nav-item">
+              <span class="icon-circle-left" title="Go Back"></span>
+            </a>
+          </div>
+        {{/if}}
 
         <form class="js-course-new todo-new input-symbol">
           <span class="icon-add js-todo-add"></span>
