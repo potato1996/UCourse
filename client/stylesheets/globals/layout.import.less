@@ -44,6 +44,12 @@ body {
     margin-left: -12.8px;
   }
 
+  .content-unscrollable {
+    .position(absolute, 0, 0, 0, 0);
+    .transform(translate3d(0, 0, 0));
+    -webkit-overflow-scrolling: touch;
+  }
+
   .content-scrollable {
     .position(absolute, 0, 0, 0, 0);
     .transform(translate3d(0, 0, 0));
