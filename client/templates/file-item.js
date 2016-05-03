@@ -6,16 +6,12 @@ var FILE_PATH = 'filePath';
 Session.setDefault(FILE_PATH, "");
 
 Template.fileItem.helpers({
-  setFile: function(filename, filepath){ 
-    Session.set(FILE_NAME, filename);
-    Session.set(FILE_PATH, filepath);
-    return Session.get(FILE_NAME);
-  }
+
 });
 
-var showFile = function (list, template) {
-  Session.set(FILE_NAME, list.filename);
-  Session.set(FILE_PATH, list.path);
+var showFile = function (fileitem, template) {
+  Session.set(FILE_NAME, fileitem.filename);
+  Session.set(FILE_PATH, fileitem.path);
   Router.go('file-page');
 };
 

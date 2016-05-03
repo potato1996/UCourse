@@ -1,5 +1,5 @@
 .page.lists-show {
-  .content-scrollable {
+  .content-unscrollable {
     background: @color-empty;
     top: 5em !important;
 
@@ -9,13 +9,12 @@
       .transform(translate3d(0, 0, 0));
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
-      height: 99%;
+      height: 100%;
       width: 100%;
 
       @media screen and (min-width: 40em) {
+        height: 99%;
         width: 48%;
-        box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
-        border: 1px solid rgba(34,36,38,.15);
       }
     }
 
@@ -32,6 +31,10 @@
         float: left;
         margin-left: 0.5%;
         margin-right: 0.5%;
+
+        border: 1px solid rgba(34,36,38,.15);
+        box-shadow: 0px 2px 4px 0px rgba(34, 36, 38, 0.12), 0px 2px 10px 0px rgba(34, 36, 38, 0.08);//0 1px 2px 0 rgba(34,36,38,.15);
+        border-radius: 0.28571429rem;
       }
     }
 
@@ -48,3 +51,4 @@
 // end added
   }
 }
+
