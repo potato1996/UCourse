@@ -23,6 +23,9 @@ var checkPassword = function(password){
 };
 
 Template.userSetting.helpers({
+  showBack: function(){
+    return Session.get("settingStatus") !== "home";
+  },
   settingItems: function(){
     switch (Session.get("settingStatus")) {
       case "account":
