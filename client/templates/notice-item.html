@@ -1,7 +1,10 @@
 <!-- created by zhaozewei, the template for a notice item -->
 <template name="noticeItem">
   <span class="blue-point"></span>
-  <div class="title">{{notificationname}}</div>
+  <div class="title">
+    <div class="cs-title">{{notificationname}}</div>
+    <div class="cs-time">{{noticeTime create_time}}</div>
+  </div>
   <div class="content">
     <p class="item-word">{{description}}</p>
   </div>
