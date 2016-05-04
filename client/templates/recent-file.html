@@ -1,0 +1,27 @@
+<template name="recentFile">
+
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-picture">
+      <!-- <img src="img/cd-icon-picture.svg" alt="Picture"> -->
+    </div>
+
+    <div class="cd-timeline-content">
+      <h2>{{filename}}</h2>
+
+      <div class="image">
+        <img class="ui image" src="http://p7.qhimg.com/dr/250_500_/t012fac8722d763cbd0.jpg">
+      </div>
+      
+      <div class="content">
+        <a>
+          <span class="item-word">{{setFile filename path}}</span>
+        </a>
+      </div>
+
+        <p>{{description}}</p>
+        <span class="cd-date">{{create_time}}</span>
+
+    </div>
+  </div>
+
+</template>

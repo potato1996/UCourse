@@ -99,3 +99,8 @@ Meteor.publish('fetch_file_by_course_id',function(course_id){
     return uc_file.find({_id:{$in: file_id_array}});
 });
 //2016-4-26 by potato
+
+
+Meteor.publish('fetch_student_rl_course_by_id',function(course_id){
+    return uc_student_rl_course.find({course_id:course_id,student_id:Meteor.userId()});
+});
