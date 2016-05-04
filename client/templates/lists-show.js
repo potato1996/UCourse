@@ -128,6 +128,7 @@ var deleteList = function(list) {
     //Todos.find({listId: list._id}).forEach(function(todo) {
       //Todos.remove(todo._id);
     //});
+    Meteor.subscribe('remove_single_course_from_recent',list._id);
     curr_rl = uc_student_rl_course.find({course_id:list._id,student_id:Meteor.userId()}).fetch();
     uc_student_rl_course.remove(curr_rl[0]['_id']);
     //uc_student_rl_course.remove({course_id:list._id});
