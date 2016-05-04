@@ -5,6 +5,10 @@ Session.setDefault(EDITING_KEY, false);
 //var INFO = "showInfo";
 //Session.setDefault(INFO, false);
 
+// Sam
+var RECENT = "showRecent"
+Session.setDefault(RECENT, false);
+
 // Added by zhaozewei
 var INFO_KEY = "Info";
 var COURSENAME_KEY = "CourseName";
@@ -84,6 +88,17 @@ Template.listsShow.helpers({
   //showInfo: function(){
     //return Session.get(INFO);
   //}
+
+  // Sam
+  showRecent: function(list){
+    //var course = uc_course.find({coursename: 'Recent'}).fetch();
+    //alert(listId.coursename);
+    if (list.coursename == 'Recent')
+      return true;
+    else
+      return false;
+   // return Session.get(RECENT);
+  }
 });
 
 var editList = function(list, template) {
