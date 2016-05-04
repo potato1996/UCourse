@@ -31,9 +31,43 @@ Meteor.publish('add_course_by_rec_course_id',function(rec_course_id){
     if(uc_student_rl_course.find({student_id: this.userId,course_id:rec_course_id}).count() === 0)
         {
             uc_student_rl_course.insert({student_id: this.userId,course_id:rec_course_id});
+            if(uc_student_rl_course.find({student_id:this.userId,rank:0}).count() === 0)
+                {
+                    return uc_student_rl_course.find({student_id:this.userId});
+                }
+            else
+                {
+                    var recentId = uc_student_rl_course.find({student_id:this.userId,rank:0}).fetch()[0]['course_id'];
+                    var this_links = uc_course_rl_link.find({course_id:rec_course_id}).fetch();
+                    var this_links_length = this_links.length;
+                    for (var j = 0;j<this_links_length;j++)
+                        {
+                            var temp_linkid = this_links[j]['link_id'];
+                            uc_course_rl_link.insert({course_id:recentId,link_id:temp_linkid});
+                        }
+                }
         }
     return uc_student_rl_course.find({student_id:this.userId});
     
+});
+Meteor.publish('remove_single_course_from_recent',function(single_course_id){
+    if(uc_student_rl_course.find({student_id:this.userId,rank:0}).count() === 0)
+                {
+                    return uc_student_rl_course.find({student_id:this.userId});
+                }
+            else
+                {
+                    var recentId = uc_student_rl_course.find({student_id:this.userId,rank:0}).fetch()[0]['course_id'];
+                    var this_links = uc_course_rl_link.find({course_id:single_course_id}).fetch();
+                    var this_links_length = this_links.length;
+                    for (var j = 0;j<this_links_length;j++)
+                        {
+                            var temp_linkid = this_links[j]['link_id'];
+                            var temp_rl_id = uc_course_rl_link.find({course_id:recentId,link_id:temp_linkid}).fetch()[0]['_id'];
+                            uc_course_rl_link.remove(temp_rl_id);
+                        }
+                    return uc_student_rl_course.find({student_id:this.userId});
+                }
 });
 Meteor.publish('fetch_single_course_by_id',function(single_course_id){
    return uc_course.find({_id:single_course_id}); 
