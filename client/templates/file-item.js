@@ -6,7 +6,16 @@ var FILE_PATH = 'filePath';
 Session.setDefault(FILE_PATH, "");
 
 Template.fileItem.helpers({
-
+  fileTime: function(create_time) {
+    Y = create_time.getFullYear() + '-';
+    M = (create_time.getMonth()+1 < 10 ? '0'+(create_time.getMonth()+1) : create_time.getMonth()+1) + '-';
+    _D = create_time.getDate();
+    D = (_D < 10 ? '0'+ _D : _D) + ' ';
+    h = create_time.getHours() + ':';
+    m = create_time.getMinutes();
+    myTime = Y+M+D+h+m;
+    return myTime;
+  }
 });
 
 var showFile = function (fileitem, template) {
