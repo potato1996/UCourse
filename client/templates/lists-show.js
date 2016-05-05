@@ -121,6 +121,11 @@ var deleteList = function(list) {
   //if (! list.userId && Lists.find({userId: {$exists: false}}).count() === 1) {
     //return alert("Sorry, you cannot delete the final public list!");
   //}
+  if(list.coursename == "Recent")
+      {
+          confirm("您不能删除Recent列表！");
+          return true;
+      }
 
   var message = "您确定要删除课程 " + list.coursename + " 吗?";
   if (confirm(message)) {

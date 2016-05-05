@@ -30,7 +30,7 @@ Meteor.publish('fetch_rec_course_by_name', function(course_name){
 Meteor.publish('add_course_by_rec_course_id',function(rec_course_id){
     if(uc_student_rl_course.find({student_id: this.userId,course_id:rec_course_id}).count() === 0)
         {
-            uc_student_rl_course.insert({student_id: this.userId,course_id:rec_course_id});
+            uc_student_rl_course.insert({student_id: this.userId,course_id:rec_course_id,rank:1});
             if(uc_student_rl_course.find({student_id:this.userId,rank:0}).count() === 0)
                 {
                     return uc_student_rl_course.find({student_id:this.userId});
