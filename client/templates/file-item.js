@@ -15,6 +15,16 @@ Template.fileItem.helpers({
     m = create_time.getMinutes();
     myTime = Y+M+D+h+m;
     return myTime;
+  },
+
+  showFileSize: function(filesize) {
+    if(filesize < 1024)
+      return filesize + ' ' + 'KB';
+    if(filesize < 1024 * 1024)
+      return (filesize / 1024).toFixed(1) + ' ' + 'MB';
+    if(filesize < 1024 * 1024 * 1024)
+      return (filesize / 1024 / 1024).toFixed(1) + ' ' + 'GB';
+    return (filesize / 1024 / 1024 / 1024).toFixed(1) + ' ' + 'TB';
   }
 });
 
