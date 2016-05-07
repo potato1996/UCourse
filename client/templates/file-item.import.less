@@ -1,8 +1,11 @@
+.items {
+  padding: 0.5em !important;
+}
+
 .file-item {
   .font-s2;
-
+  padding: 0.5em 0 !important;
   cursor: pointer;
-  //padding: 1em !important;
 
   // Layout of file-item children
   .display(flex);
@@ -33,43 +36,46 @@
   }
 
   .content {
-    padding: 0.3em 0.4em !important;
+    height: 68px;
 
-    .cs-time, .cs-size {
-      font-size: 0.9em;
+    .item-image {
+      float: left;
+      width: 64px;
+      margin-right: 0.5em;
+    }
+
+  // Style of file-title word
+    .item-words {
+      float: left;
+      padding: 2px 0;
+
+      .item-title {
+        .flex(1);
+  
+        font-size: 1em;//18px;
+        line-height: 20px;
+        font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-style: 400;
+        line-height: 1.5rem !important;
+        border: none;
+        color: #333333;
+        outline: none;
+
+        background: transparent;
+        cursor: pointer;
+
+        &:focus { cursor: text; }
+      }
+
+      .cs-time, .cs-size {
+        font-size: 0.85em;
+      }
     }
   }
 
   .buttons .button {
     padding: 0em 0em !important;
   }
+}
 
-  // Style of file-title word
-  .item-title {
-    .flex(1);
-
-    font-size: 1em;//18px;
-    line-height: 20px;
-    font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-style: 400;
-    //padding: .75rem 0;
-    line-height: 1.5rem !important;
-    border: none;
-    color: #333333;
-    outline: none;
-
-    background: transparent;
-    cursor: pointer;
-
-    &:focus { cursor: text; }
-  }
-
-  .cs-image {
-    //width: 50%;
-  }
 // end added
-}
-
-.items {
-  padding: 1em !important;
-}

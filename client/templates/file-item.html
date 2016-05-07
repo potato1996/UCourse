@@ -1,16 +1,18 @@
 <!-- created by zhaozewei, the template for a file item -->
 <template name="fileItem">
   <div class="file-item ui item js-show-file">
-    <div class="cs-image">
-      <!--<img class="ui image" src="http://img2.imgtn.bdimg.com/it/u=2871587561,1839644263&fm=21&gp=0.jpg">-->
-      <!--img src="http://img3.imgtn.bdimg.com/it/u=3753587518,1412952621&fm=15&gp=0.jpg"-->
-        <img src="http://121.42.173.75:9000/pdf.jpg">
-    </div>
     <div class="content">
-      <span class="item-title">{{filename}}</span>
-      <div class="meta">
-        <span class="cs-size">{{showFileSize filesize}}</span>
-        <span class="cs-time">{{fileTime create_time}}</span>
+      <div class="item-image">
+        <!--<img class="ui image" src="http://img2.imgtn.bdimg.com/it/u=2871587561,1839644263&fm=21&gp=0.jpg">-->
+        <!--img src="http://img3.imgtn.bdimg.com/it/u=3753587518,1412952621&fm=15&gp=0.jpg"-->
+        <img src="http://121.42.173.75:9000/pdf.jpg">
+      </div>
+      <div class="item-words">
+        <div class="item-title">{{filename}}</div>
+        <div class="meta">
+          <span class="cs-size">{{showFileSize filesize}}</span>
+          <span class="cs-time">{{fileTime create_time}}</span>
+        </div>
       </div>
     </div>
 <!--
