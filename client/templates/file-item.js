@@ -5,15 +5,42 @@ Session.setDefault(FILE_NAME, "无标题文档");	//利用Session实现变量值
 var FILE_PATH = 'filePath';
 Session.setDefault(FILE_PATH, "");
 
+String.prototype.myreverse = function() {
+  return this.split('').reverse().join('');
+}
+
+String.prototype.gblen = function() {
+  var chArr = this.match(/[^\x00-\xff]/ig);
+  return this.length + (chArr == null ? 0 : chArr.length);
+}
+
+String.prototype.gbcutstr = function(len) {
+  if(len <= 0)
+    return '';
+  var cnt = 0;
+  for(var i = 0; i < this.length; ++i) {
+    if(this.charCodeAt(i) > 0xff)
+      cnt += 2;
+    else
+      ++cnt;
+
+    if(cnt >= len) {
+      var end = (cnt == len) ? i+1 : i;
+      return this.substring(0, end);
+    }
+  }
+  return this;
+}
+
 Template.fileItem.helpers({
   fileTime: function(create_time) {
-    Y = create_time.getFullYear() + '-';
-    M = (create_time.getMonth()+1 < 10 ? '0'+(create_time.getMonth()+1) : create_time.getMonth()+1) + '-';
-    _D = create_time.getDate();
-    D = (_D < 10 ? '0'+ _D : _D) + ' ';
-    h = create_time.getHours() + ':';
-    m = create_time.getMinutes();
-    myTime = Y+M+D+h+m;
+    var Y = create_time.getFullYear() + '-';
+    var M = (create_time.getMonth()+1 < 10 ? '0'+(create_time.getMonth()+1) : create_time.getMonth()+1) + '-';
+    var _D = create_time.getDate();
+    var D = (_D < 10 ? '0'+ _D : _D) + ' ';
+    var h = create_time.getHours() + ':';
+    var m = create_time.getMinutes();
+    var myTime = Y+M+D+h+m;
     return myTime;
   },
 
@@ -25,8 +52,20 @@ Template.fileItem.helpers({
     if(filesize < 1024 * 1024 * 1024)
       return (filesize / 1024 / 1024).toFixed(1) + ' ' + 'GB';
     return (filesize / 1024 / 1024 / 1024).toFixed(1) + ' ' + 'TB';
+  },
+
+  showFileName: function(filename) {
+    var len = filename.gblen();
+    var maxLen = 26;	//最多显示26字节
+    var left = 16, right = 10;
+    if(len <= maxLen)
+      return filename;
+    var lName = filename.gbcutstr(left);
+    var rName = filename.myreverse().gbcutstr(right).myreverse();
+    return lName + '...' + rName;
   }
 });
+
 
 var showFile = function (fileitem, template) {
   Session.set(FILE_NAME, fileitem.filename);
