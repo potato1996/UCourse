@@ -119,9 +119,20 @@ Template.fileItem.helpers({
 
 
 var showFile = function (fileitem, template) {
-  Session.set(FILE_NAME, fileitem.filename);
-  Session.set(FILE_PATH, fileitem.path);
-  Router.go('file-page');
+/* test */
+//fileitem.path = 'http://121.42.173.75:9000/test_doc.docx';
+//fileitem.filetype = 'docx';
+//fileitem.path = 'http://121.42.173.75:9000/2015f-12-1.pptx';
+//fileitem.filetype = 'pptx';
+  if(fileitem.filetype == 'pdf') {
+    Session.set(FILE_NAME, fileitem.filename);
+    Session.set(FILE_PATH, fileitem.path);
+    Router.go('file-page');
+  }
+  else {
+    //window.open(fileitem.path);
+    window.location.href = fileitem.path;
+  }
 };
 
 Template.fileItem.events({
