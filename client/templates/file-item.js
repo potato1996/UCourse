@@ -32,6 +32,53 @@ String.prototype.gbcutstr = function(len) {
   return this;
 }
 
+var getFileIconPath = function(type, path) {
+  var name;
+  switch(type) {
+  case 'pdf':
+    name = 'PDF.png'; break;
+  case 'doc':
+  case 'docx':
+    name = 'DOC.png'; break;
+  case 'ppt':
+  case 'pptx':
+    name = 'PPT.png'; break;
+  case 'xls':
+  case 'xlxs':
+    name = 'XLS.png'; break;
+  case 'txt':
+    name = 'TXT.png'; break;
+  case 'png':
+  case 'bmp':
+  case 'gif':
+    name = 'PNG.png'; break;
+  case 'jpg':
+  case 'jpeg':
+    name = 'JPG.png'; break;
+  case 'mp3':
+  case 'wav':
+  case 'wma':
+    name = 'MP3.png'; break;
+  case 'mpg':
+  case 'mp4':
+  case 'wmv':
+  case 'mov':
+  case 'avi':
+  case 'flv':
+    name = 'MPG.png'; break;
+  case 'zip':
+  case 'rar':
+  case 'tar':
+    name = 'ZIP.png'; break;
+  case 'htm':
+  case 'html':
+    name = 'HTML.png'; break;
+  default:
+    name = 'Generic Document.png';
+  }
+  return path + '/' + name;
+};
+
 Template.fileItem.helpers({
   fileTime: function(create_time) {
     var Y = create_time.getFullYear() + '-';
@@ -63,6 +110,10 @@ Template.fileItem.helpers({
     var lName = filename.gbcutstr(left);
     var rName = filename.myreverse().gbcutstr(right).myreverse();
     return lName + '...' + rName;
+  },
+
+  FileIconPath: function(filetype, path) {
+    return getFileIconPath(filetype, path);
   }
 });
 
