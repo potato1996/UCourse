@@ -90,7 +90,7 @@ Template.appBody.helpers({
     //alert("hhh");
     var this_courses = uc_student_rl_course.find().fetch();
     //alert(this_courses.length().toString());
-    var testprint = 123;
+    //var testprint = 123;
     //alert(Meteor.userId());
     var this_courses_length = this_courses.length;
     //alert(this_courses_length);
