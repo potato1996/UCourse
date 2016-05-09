@@ -105,7 +105,7 @@ Template.addCourse.events({
   },
   'click .js-page-back': function(){
     Session.set("addCoursePageStatus","list");
-    $("input#the-course-searcher").value = "";
+    $("input#the-course-searcher")[0].value="";
     Session.set("searchCourseKeyword","");
   },
   'click .js-add-course': addCourseByID,
