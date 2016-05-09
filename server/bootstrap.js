@@ -72,11 +72,22 @@ var dev_courses = [
   }
 ];
 
+var clearall = function(){
+  uc_course.remove({})
+  uc_link.remove({})
+  uc_file.remove({})
+  uc_notification.remove({})
+  uc_student_rl_course.remove({})
+  uc_course_rl_link.remove({})
+  uc_link_rl_file.remove({})
+  uc_link_rl_notification.remove({})
+  of_course.remove({})
+}
+
 Meteor.startup(function () {
     // !!! 临时取消了检查机制，每次重启都会清空数据库！
-    uc_course.remove({});
-    of_course.remove({});
     // if((uc_course.find().count() ===0))
+        clearall();
         /*{
             var temp_course_id = uc_course.insert({
               coursename:"Recent",
