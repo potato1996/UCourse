@@ -16,6 +16,9 @@ Meteor.publish('todos', function(listId) {
 
   return Todos.find({listId: listId});
 });
+Meteor.publish('fetch_uc_fake_alert',function(){
+    return uc_fake_alert.find();
+});
 
 // added by zhaozewei
 Meteor.publish('fetch_uc_course_by_course_id', function(course_id_array) {
@@ -102,6 +105,9 @@ Meteor.publish('fetch_notification_by_link_id',function(link_id_list){
             notification_id_array.push(this_notification_rls[j]['notification_id']);
         }
     return uc_notification.find({_id:{$in: notification_id_array}});
+});
+Meteor.publish('fetch_all_notifications',function(){
+    
 });
 Meteor.publish('fetch_notification_by_course_id',function(course_id){
     var this_links = uc_course_rl_link.find({course_id:course_id}).fetch();
