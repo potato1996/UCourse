@@ -1,0 +1,57 @@
+<template name="recentPage">
+  <div class="page lists-show">
+    <nav class="js-title-nav">
+      <div class="nav-group">
+        <a href="#" class="js-menu nav-item"><span class="icon-list-unordered" title="Show menu"></span></a>
+      </div>
+
+      <h1 class="js-edit-list title-page"><span class="title-wrapper">Recent</span></h1>
+
+<!-- added by zhaozewei -->
+      <div class="am-btn-group">
+        <button type="button" id="btn-re-notice" class="js-switch-re-notice am-btn am-btn-disabled am-btn-left" disabled="disabled">通知</button><button type="button" id="btn-re-file" class="js-switch-re-file am-btn am-btn-primary am-btn-right">文件</button>
+      </div>
+<!-- end added -->
+    </nav>
+
+    <div class="content-unscrollable coursist-bg">
+      <div id="col-re-notice" class="content-scrollable-l white-bg">
+        <section id="cd-timeline" class="cd-container">
+          <!--{{#with _id}} {{! Establish new data context with only the '_id'
+                          field. This way, when the 'incompleteCount' field
+                          changes, we don't re-render the list contents }}-->
+            {{#if todosReady}}
+              {{#each todos this}}
+                {{>recentNotice}}
+              {{else}}
+                <div class="wrapper-message">
+                  <div class="title-message">No notices here</div>
+                  <div class="subtitle-message">Why not have a rest and check later?</div>
+                </div>
+              {{/each}}
+            {{/if}}
+          <!--{{/with}}-->
+        </section>
+      </div>
+
+      <div id="col-re-file" class="content-scrollable-r white-bg">
+        <section id="cd-timeline" class="cd-container">
+          <!--{{#with _id}} {{! Establish new data context with only the '_id'
+                            field. This way, when the 'incompleteCount' field
+                            changes, we don't re-render the list contents }}-->
+            {{#if filelistReady}}
+              {{#each filelist this}}
+                {{>recentFile}}
+              {{else}}
+                <div class="wrapper-message">
+                  <div class="title-message">No files here</div>
+                  <div class="subtitle-message">Why not have a rest and check later?</div>
+                </div>
+              {{/each}}
+            {{/if}}
+          <!--{{/with}}-->
+        </section>
+      </div>
+    </div>
+  </div>
+</template>

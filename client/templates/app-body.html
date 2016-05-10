@@ -18,8 +18,10 @@
             <a class="js-logout btn-secondary">Logout</a>
           {{/if}}
         </div>
-
+<!-- added by zhaozewei -->
+<!-- end added -->
         <div class="list-todos">
+          <a href="{{pathFor 'recentPage'}}" class="list-todo" title="Recent">Recent</a>
         {{#each lists}}
           <a href="{{pathFor 'listsShow'}}" class="list-todo {{activeListClass}}" title="{{coursename}}">
             {{#if userId}}
