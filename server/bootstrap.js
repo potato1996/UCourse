@@ -9,15 +9,15 @@ var dev_courses = [
       {
         notificationname:"第一周作业",
         description:"第一周作业为课本 1.1,1.2,1.3(1)(3), 请在下周三前提交！",
-        create_time:new Date()
+        create_time:new Date(2016,2,20,18,0,0)
       },{
         notificationname:"第二周作业",
         description:"第二周大作业已经布置在 OpenJudge, 请尽快完成！",
-        create_time:new Date()
+        create_time:new Date(2016,2,28,15,0,0)
       },{
         notificationname:"上课地点更改",
         description:"本周四上课地点临时更改在四教404！",
-        create_time:new Date()
+        create_time:new Date(2016,3,5,10,30,0)
       }
     ],
     files:[
@@ -25,20 +25,21 @@ var dev_courses = [
         filename:"第一周课件",
         path:"http://121.42.173.75:9000/week0.pdf",
         description:"第一周课件",
-        create_time:new Date(),
+        create_time:new Date(2016,2,22,10,0,0),
         filetype:"pdf",
         filesize:668
       },{
         filename:"第二周课件",
         path:"http://121.42.173.75:9000/week1.pdf",
         description:"第二周课件",
-        create_time:new Date(),
-        filetype:"pdf",filesize:1020
+        create_time:new Date(2016,2,29,11,0,0),
+        filetype:"pdf",
+        filesize:1020
       },{
         filename:"第三周课件",
         path:"http://xxgk.pku.edu.cn/docs/20151110194557498920.pdf",
         description:"第三周课件",
-        create_time:new Date(),
+        create_time:new Date(2016,3,6,11,30,0),
         filetype:"pdf",
         filesize:924
       }
@@ -50,11 +51,11 @@ var dev_courses = [
       {
         notificationname:"上机通知",
         description:"周日晚 6:40 在理科一号楼 1324 上机，请同学准时参加！",
-        create_time:new Date()
+        create_time:new Date(2016,3,6,11,30,0)
       },{
         notificationname:"期中考试",
         description:"期中考试定于 4 月 23 号，在机房 1326 上机考试，请准时参加！",
-        create_time:new Date()
+        create_time:new Date(2016,3,18,8,30,0)
       }
     ],
     files:[
@@ -62,14 +63,14 @@ var dev_courses = [
         filename:"助教信息",
         path:"http://121.42.173.75:9000/week0.pdf",
         description:"助教信息",
-        create_time:new Date(),
+        create_time:new Date(2016,3,25,11,30,0),
         filetype:"pdf",
         filesize:668
       },{
         filename:"课程大纲",
         path:"http://121.42.173.75:9000/week1.pdf",
         description:"课程大纲",
-        create_time:new Date(),
+        create_time:new Date(2016,3,30,20,30,0),
         filetype:"pdf",
         filesize:1020
       },
@@ -81,7 +82,7 @@ var dev_courses = [
       {
         notificationname:"本周作业 Deadline 推迟",
         description:"应同学要求，第 7 次作业推迟到最晚下周三交。",
-        create_time:new Date()
+        create_time:new Date(2016,3,6,11,15,0)
       },
     ],
     files:[
@@ -89,7 +90,7 @@ var dev_courses = [
         filename:"讲座讲义",
         path:"http://121.42.173.75:9000/week1.pdf",
         description:"本周讲座的讲义！",
-        create_time:new Date(),
+        create_time:new Date(2016,3,19,9,30,0),
         filetype:"pdf",
         filesize:1020
       },
@@ -101,7 +102,7 @@ var dev_courses = [
       {
         notificationname:"期中考试成绩公布",
         description:"期中考试成绩已经公布。需要查分的同学在本周到 1670 查分！",
-        create_time:new Date()
+        create_time:new Date(2016,3,16,12,30,0)
       },
     ],
     files:[
@@ -109,7 +110,7 @@ var dev_courses = [
         filename:"实验讲义",
         path:"http://121.42.173.75:9000/week1.pdf",
         description:"本周实验课的讲义，请同学们提前预习一下！",
-        create_time:new Date(),
+        create_time:new Date(2016,3,20,11,30,0),
         filetype:"pdf",
         filesize:1020
       },
@@ -121,11 +122,11 @@ var dev_courses = [
       {
         notificationname:"周二晚进行代码联调",
         description:"周二晚上在二号教学楼414进行代码联调！",
-        create_time:new Date()
+        create_time:new Date(2016,3,8,17,30,0)
       },{
         notificationname:"周四讲 BP",
         description:"周四晚由各组产品经理试讲 BP!",
-        create_time:new Date()
+        create_time:new Date(2016,3,16,11,30,0)
       }
     ],
     files:[
@@ -133,14 +134,14 @@ var dev_courses = [
         filename:"第七周课件",
         path:"http://121.42.173.75:9000/week0.pdf",
         description:"第七周周四的课件",
-        create_time:new Date(),
+        create_time:new Date(2016,3,26,9,30,0),
         filetype:"pdf",
         filesize:668
       },{
         filename:"教学进度",
         path:"http://121.42.173.75:9000/week1.pdf",
         description:"修改后的教学进度表",
-        create_time:new Date(),
+        create_time:new Date(2016,3,29,11,30,0),
         filetype:"pdf",
         filesize:1020
       },
