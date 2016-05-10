@@ -32,7 +32,7 @@ String.prototype.gbcutstr = function(len) {
   return this;
 }
 
-var getFileIconPath = function(type, path) {
+getFileIconPath = function(type, path) {
   var name;
   switch(type) {
   case 'pdf':
@@ -79,16 +79,22 @@ var getFileIconPath = function(type, path) {
   return path + '/' + name;
 };
 
+getMyTime = function(time) {
+  var Y = time.getFullYear() + '-';
+  var M = (time.getMonth()+1 < 10 ? '0'+(time.getMonth()+1) : time.getMonth()+1) + '-';
+  var _D = time.getDate();
+  var D = (_D < 10 ? '0'+ _D : _D) + ' ';
+  var _h = time.getHours();
+  var h = (_h < 10 ? '0'+ _h : _h) + ':';
+  var _m = time.getMinutes();
+  var m = (_m < 10 ? '0'+ _m : _m);
+  var myTime = Y+M+D+h+m;
+  return myTime;
+};
+
 Template.fileItem.helpers({
   fileTime: function(create_time) {
-    var Y = create_time.getFullYear() + '-';
-    var M = (create_time.getMonth()+1 < 10 ? '0'+(create_time.getMonth()+1) : create_time.getMonth()+1) + '-';
-    var _D = create_time.getDate();
-    var D = (_D < 10 ? '0'+ _D : _D) + ' ';
-    var h = create_time.getHours() + ':';
-    var m = create_time.getMinutes();
-    var myTime = Y+M+D+h+m;
-    return myTime;
+    return getMyTime(create_time);
   },
 
   showFileSize: function(filesize) {

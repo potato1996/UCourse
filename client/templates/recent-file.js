@@ -6,14 +6,7 @@ Session.setDefault(FILE_PATH, "");
 
 Template.recentFile.helpers({
   fileTime: function(create_time) {
-    var Y = create_time.getFullYear() + '-';
-    var M = (create_time.getMonth()+1 < 10 ? '0'+(create_time.getMonth()+1) : create_time.getMonth()+1) + '-';
-    var _D = create_time.getDate();
-    var D = (_D < 10 ? '0'+ _D : _D) + ' ';
-    var h = create_time.getHours() + ':';
-    var m = create_time.getMinutes();
-    var myTime = Y+M+D+h+m;
-    return myTime;
+    return getMyTime(create_time);
   },
 
   showFileSize: function(filesize) {
@@ -36,6 +29,10 @@ Template.recentFile.helpers({
     var rName = filename.myreverse().gbcutstr(right).myreverse();
     return lName + '...' + rName;
   },
+
+  FileIconPath: function(filetype, path) {
+    return getFileIconPath(filetype, path);
+  }
 });
 
 var showFile = function (fileitem, template) {

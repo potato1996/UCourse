@@ -3,34 +3,35 @@
 
 var dev_add_notices = function(temp_course_id){
   var temp_link_id = uc_link.insert({linkname:"test link",linktype:0,url:"",account:"test account",passwd:"test passwd"});
-  var temp_file_id1 = uc_file.insert({filename:"第一周课件",path:"http://121.42.173.75:9000/week0.pdf",description:"第一周课件",create_time:new Date(),filetype:"pdf",filesize:668});
+  var temp_file_id1 = uc_file.insert({filename:"第一周课件",path:"http://121.42.173.75:9000/week0.pdf",description:"第一周课件",create_time:new Date(2016,2,12,22,19,35),filetype:"pdf",filesize:668});
   uc_course_rl_link.insert({link_id:temp_link_id,course_id:temp_course_id});
   uc_link_rl_file.insert({link_id:temp_link_id,file_id:temp_file_id1});
 
-  var temp_file_id2 = uc_file.insert({filename:"第二周课件",path:"http://121.42.173.75:9000/week1.pdf",description:"第二周课件",create_time:new Date(),filetype:"pdf",filesize:1020});
+  var temp_file_id2 = uc_file.insert({filename:"第二周课件",path:"http://121.42.173.75:9000/week1.pdf",description:"第二周课件",create_time:new Date(2016,2,15,20,0,0),filetype:"pdf",filesize:1020});
   uc_link_rl_file.insert({link_id:temp_link_id,file_id:temp_file_id2});
 
-  var temp_file_id3 = uc_file.insert({filename:"第三周课件", path:"http://xxgk.pku.edu.cn/docs/20151110194557498920.pdf", description:"第三周课件", create_time:new Date(),filetype:"pdf",filesize:924});
+  var temp_file_id3 = uc_file.insert({filename:"第三周课件", path:"http://xxgk.pku.edu.cn/docs/20151110194557498920.pdf", description:"第三周课件", create_time:new Date(2016,2,20,19,0,0),filetype:"pdf",filesize:924});
   uc_link_rl_file.insert({link_id:temp_link_id, file_id:temp_file_id3});
 
   var temp_notification_id1 = uc_notification.insert({
     notificationname:"第一周作业",
     description:"第一周作业为课本 1.1,1.2,1.3(1)(3), 请在下周三前提交！",
-    create_time:new Date()
+    create_time:new Date(2016,2,12,19,00,0)
   });
   uc_link_rl_notification.insert({link_id:temp_link_id,notification_id:temp_notification_id1});
 
   var temp_notification_id2 = uc_notification.insert({
     notificationname:"第二周作业",
     description:"第二周大作业已经布置在 OpenJudge, 请尽快完成！",
-    create_time:new Date()
+    create_time:new Date(2016,2,16,19,5,0)
   });
   uc_link_rl_notification.insert({link_id:temp_link_id,notification_id:temp_notification_id2});
 
   var temp_notification_id3 = uc_notification.insert({
     notificationname:"上课地点更改",
     description:"本周四上课地点临时更改在四教404！",
-    create_time:new Date()});
+    create_time:new Date(2016,2,20,19,0,0)
+  });
   uc_link_rl_notification.insert({link_id:temp_link_id,notification_id:temp_notification_id3});
 }
 

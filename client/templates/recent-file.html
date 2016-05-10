@@ -6,20 +6,14 @@
     </div>
 
     <div class="cd-timeline-content">
-      <h2>{{showFileName filename}}</h2>
+      <a><h2 class="js-show-file">{{showFileName filename}}</h2></a>
 
-      <div class="image">
-        <img class="ui image" src="http://p7.qhimg.com/dr/250_500_/t012fac8722d763cbd0.jpg">
+      <div class="image fileicon-ui">
+        <img class="ui image" src={{FileIconPath filetype '/fileicon'}}>
       </div>
       
-      <div class="content js-show-file">
-        <a>
-          <span class="item-word">{{showFileName filename}}</span>
-        </a>
-      </div>
-
-        <!--<p>{{description}}</p>-->
-        <span class="cd-date">{{fileTime create_time}}</span>
+      <!--<p>{{description}}</p>-->
+      <span class="cd-date">{{fileTime create_time}}</span>
 
     </div>
   </div>
