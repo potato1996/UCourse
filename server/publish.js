@@ -77,13 +77,15 @@ Meteor.publish('fetch_single_course_by_id',function(single_course_id){
 });
 // add by potato
 Meteor.publish('fetch_uc_student_rl_course',function(){
+/* by zhaozewei
     if(uc_student_rl_course.find({student_id:this.userId,rank:0}).count()===0)
         {
                 var temp_recent_id = uc_course.insert({coursename:"Recent",school:"Unknown",departmentname:"Unknown",description:"最新的通知和文件",isRecommend:0});
             uc_student_rl_course.insert({student_id:this.userId,course_id:temp_recent_id,rank:0});
             
-        }
-    return uc_student_rl_course.find({student_id: this.userId});          
+        }     
+*/
+    return uc_student_rl_course.find({student_id: this.userId});     
 });
 
 Meteor.publish('fetch_uc_link_by_course_id',function(course_id){
