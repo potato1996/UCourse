@@ -120,4 +120,9 @@ Template.addCourse.events({
     Session.set('searchCourseKeyword',$input.val());
     Router.go('addCourse');
   },
+
+// Added by zhaozewei
+  'click .js-diy-course': function() {
+    Router.go('DIYCourse');
+  }
 });
