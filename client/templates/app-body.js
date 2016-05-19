@@ -82,7 +82,7 @@ Template.appBody.helpers({
         {
             var alert_id = temp_alert.fetch()[0]['_id'];
             var alert_content = temp_alert.fetch()[0]['content'];
-            alert(alert_content);
+            Bert.alert({title: '新通知',message: alert_content,type: 'info',style:'growl-top-right'});
             uc_fake_alert.remove(alert_id);
         }
     Meteor.subscribe('fetch_uc_student_rl_course');
