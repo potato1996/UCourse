@@ -81,6 +81,10 @@ var addCourseByID = function(){
 //==================================================
 
 Template.addCourse.helpers({
+  courseNameInput: function() {
+    var nameStr = Session.get("searchCourseKeyword");
+    return (nameStr ==  "") ? nameStr : ("：" + nameStr);
+  },
   courses: function(){
     return searchCourse(Session.get("searchCourseKeyword"));
   },

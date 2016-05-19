@@ -35,11 +35,15 @@
 
     <div class="content-scrollable list-items">
       {{#if showCourseList}}
-      {{#each courses}}
-        {{> courseName}}
-      {{/each}}
+        <div>
+          {{#each courses}}
+            {{> courseName}}
+          {{/each}}
+        </div>
 <!-- Added by zhaozewei -->
-      <button class="addCourseBtn js-diy-course">创建课程</button>
+        <div>
+          <button class="DIYCourseBtn js-diy-course">创建课程{{courseNameInput}}</button>
+        </div>
 <!-- End -->
 
       {{else}}
