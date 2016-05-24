@@ -15,10 +15,34 @@
       </div>
     </nav>
 
-    <div class="content-scrollable list-items">
-      <div class="wrapper-notice">
-        <div class="title-notice">TODO</div>
-        <div class="content-notice">TODO</div>
+    <div class="content-scrollable">
+      <div class="ui secondary pointing compact menu five item">
+        <a class="active item js-diy-email">公共邮箱</a>
+        <a class="item js-diy-course">教学网</a>
+        <a class="item js-diy-disk">网 盘</a>
+        <a class="item js-diy-bbs">论 坛</a>
+        <a class="item js-diy-homepage">个人主页</a>
+      </div>
+      <div id="form-email" class="diyFormWrapper">
+        <form class="ui ">
+          <div class="input-symbol field">
+            <input name="url" placeholder="网址" type="text">
+            <span class="icon-home3" title="Website"></span>
+          </div>
+          <div class="input-symbol field">
+            <input name="account" placeholder="帐号" type="text">
+            <span class="icon-user" title="Account"></span>
+          </div>
+          <div class="input-symbol field">
+            <input name="email" placeholder="邮箱" type="email">
+            <span class="icon-email" title="Email"></span>
+          </div>
+          <div class="input-symbol field">
+            <input name="password" placeholder="密码" type="password">
+            <span class="icon-lock" title="Password"></span>
+          </div>
+          <button type="submit" class="btn-primary">确认</button>
+        </form>
       </div>
     </div>
   </div>

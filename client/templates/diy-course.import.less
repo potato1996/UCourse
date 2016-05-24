@@ -1,0 +1,56 @@
+.diyFormWrapper {
+  padding: 3em 0;
+
+  @media screen and (min-width: 40em) {
+    padding-top: 3em;
+    margin: 0 auto;
+    max-width: 480px;
+    width: 80%;
+  }
+
+  .title-auth {
+    .font-l1;
+    .type-light;
+    color: @color-ancillary;
+    margin-bottom: .75rem;
+  }
+
+  .subtitle-auth {
+    color: @color-medium-well;
+    margin: 0 15% 3rem;
+  }
+
+  form {
+    .input-symbol {
+      margin-bottom: 1px;
+      width: 100%;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #c7d2d2;
+    }
+
+    .btn-primary {
+      margin: 1em 5% 0;
+      width: 90%;
+
+      @media screen and (min-width: 40em) {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .list-errors {
+    margin-top: -2rem;
+    .list-item {
+      .title-caps;
+      background: @color-note;
+      color: @color-negative;
+      font-size: .625em; // 10px
+      margin-bottom: 1px;
+      padding: .7rem 0;
+    }
+  }
+}
+
