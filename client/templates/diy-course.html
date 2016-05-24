@@ -23,8 +23,16 @@
         <a class="item js-diy-bbs">论 坛</a>
         <a class="item js-diy-homepage">个人主页</a>
       </div>
-      <div id="form-email" class="diyFormWrapper">
-        <form class="ui ">
+      <div id="DIYform" class="diyFormWrapper">
+        <form>
+          {{#if errorMessages}}
+            <div class="list-errors">
+              {{#each errorMessages}}
+                <div class="list-item">{{this}}</div>
+              {{/each}}
+            </div>
+          {{/if}}
+
           <div class="input-symbol field">
             <input name="url" placeholder="网址" type="text">
             <span class="icon-home3" title="Website"></span>
@@ -41,6 +49,7 @@
             <input name="password" placeholder="密码" type="password">
             <span class="icon-lock" title="Password"></span>
           </div>
+
           <button type="submit" class="btn-primary">确认</button>
         </form>
       </div>
