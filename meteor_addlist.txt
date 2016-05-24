@@ -13,3 +13,9 @@ meteor add semantic:ui-accordion
 
 /*****  add ui-item  ****/
 meteor add semantic:ui-item
+
+/*****  add ui-menu  ****/
+ meteor add semantic:ui-menu
+
+/*****  add ui-form  ****/
+ meteor add semantic:ui-form

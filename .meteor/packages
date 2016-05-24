@@ -24,3 +24,5 @@ semantic:ui-card
 semantic:ui-button
 semantic:ui-accordion
 semantic:ui-item
+semantic:ui-menu
+semantic:ui-form
