@@ -1,5 +1,6 @@
 // created by zhaozewei
 var ERRORS_KEY = 'diyErrors';
+var NewCourse_KEY = 'searchCourseKeyword';
 
 Template.DIYCourse.onCreated(function() {
   Session.set(ERRORS_KEY, {});
@@ -23,6 +24,9 @@ Template.DIYCourse.onRendered(function() {
   $menuItem
     .on('click', handler.activate)
   ;
+/* Fill raw course name automatically */
+  var course_name = Session.get(NewCourse_KEY);
+  $('[name=name]').val(course_name);
 });
 
 Template.DIYCourse.helpers({
@@ -37,13 +41,18 @@ Template.DIYCourse.helpers({
 Template.DIYCourse.events({
   'submit': function(event, template) {
     event.preventDefault();
-    
+
+    var course = template.$('[name=name]').val();
     var url = template.$('[name=url]').val();
     var account = template.$('[name=account]').val();
     var email = template.$('[name=email]').val();
     var password = template.$('[name=password]').val();
     
     var errors = {};
+
+    if (! course) {
+      errors.course = '请输入课程名！';
+    }
 
     if (! url) {
       errors.url = '请输入网址！';
@@ -66,6 +75,7 @@ Template.DIYCourse.events({
       return;
     }
 
+    alert('成功创建课程：'+course);
     Router.go('addCourse');
   },
 
