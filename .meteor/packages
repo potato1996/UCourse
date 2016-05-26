@@ -24,6 +24,9 @@ semantic:ui-card
 semantic:ui-button
 semantic:ui-accordion
 semantic:ui-item
+<<<<<<< HEAD
 semantic:ui-menu
 semantic:ui-form
+=======
+>>>>>>> 1e3b591a89d63c92de0613e4cfb5de00924ddc08
 themeteorchef:bert
