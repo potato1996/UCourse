@@ -9,8 +9,8 @@
 -->
     <div class="content-scrollable">
       <div class="wrapper-auth">
-        <h1 class="title-auth">Join.</h1>
-        <p class="subtitle-auth" >Joining allows you to get your courses resources</p>
+        <h1 class="title-auth">注册</h1>
+        <p class="subtitle-auth" >注册后可以添加自己的课程资源</p>
 
         <form>
           {{#if errorMessages}}
@@ -22,25 +22,25 @@
           {{/if}}
 
           <div class="input-symbol  {{errorClass 'email'}}">
-            <input type="email" name="email" placeholder="Your Email" />
+            <input type="email" name="email" placeholder="你的邮件地址" />
             <span class="icon-email" title="Your Email"></span>
           </div>
 
           <div class="input-symbol  {{errorClass 'password'}}">
-            <input type="password" name="password" placeholder="Password" />
+            <input type="password" name="password" placeholder="密码" />
             <span class="icon-lock" title="Password"></span>
           </div>
 
           <div class="input-symbol {{errorClass 'confirm'}}">
-            <input type="password" name="confirm" placeholder="Confirm Password" />
+            <input type="password" name="confirm" placeholder="重复密码" />
             <span class="icon-lock" title="Confirm Password"></span>
           </div>
 
-          <button type="submit" class="btn-primary">Join Now</button>
+          <button type="submit" class="btn-primary">现在注册</button>
         </form>
       </div>
 
-      <a href="{{pathFor 'signin'}}" class="link-auth-alt">Have an account? Sign in</a>
+      <a href="{{pathFor 'signin'}}" class="link-auth-alt">已有账户？登录</a>
     </div>
   </div>
 </template>
