@@ -14,14 +14,14 @@
             {{emailLocalPart}}
           </a>
           {{#if userMenuOpen}}
-            <a class="js-setting btn-secondary">Setting</a>
-            <a class="js-logout btn-secondary">Logout</a>
+            <a class="js-setting btn-secondary">设置</a>
+            <a class="js-logout btn-secondary">登出</a>
           {{/if}}
         </div>
 <!-- added by zhaozewei -->
 <!-- end added -->
         <div class="list-todos">
-          <a href="{{pathFor 'recentPage'}}" class="list-todo white" title="Recent">Recent</a>
+          <a href="{{pathFor 'recentPage'}}" class="list-todo white" title="Recent">最近</a>
         {{#each lists}}
           <a href="{{pathFor 'listsShow'}}" class="list-todo {{activeListClass}}" title="{{coursename}}">
             {{#if userId}}
@@ -34,7 +34,7 @@
           </a>
         {{/each}}
         <!-- <a class="js-new-list link-list-new"><span class="icon-plus"></span>New Course</a> -->
-        <a class="js-add-course-page"><span class="icon-plus"></span>New Course</a>
+        <a class="js-add-course-page"><span class="icon-plus"></span>添加课程</a>
         <!-- <a> <form class="js-course-new">
           <span class="icon-plus"></span>
           <input type="course-searcher" id="the-course-searcher" placeholder="New Course">
